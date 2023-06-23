@@ -1,0 +1,442 @@
+.checkout{
+    margin-bottom: 5rem;
+}
+.checkout-container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 69% 29%;
+    gap: 2%;
+    /* margin-top: 1rem; */
+    margin-bottom: 2rem;
+}
+
+.checkout-container.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.checkout-container.empty svg {
+    height: 25rem;
+    max-width: 100%;
+
+}
+
+.checkout-container.empty h2 {
+    color: rgb(0, 145, 255);
+}
+
+.checkout-container.empty button {
+    /* width: 100%; */
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 145, 255);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2); */
+}
+
+.profile-header {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem 0;
+    align-items: center;
+}
+
+.profile-header a {
+    color: #141414;
+    font-size: 1.2rem;
+}
+
+a {
+    color: black;
+}
+
+/* form */
+
+form .division {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+form button {
+    margin: 1rem 0;
+    width: 100%;
+    background-color: #4db3ff;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+}
+
+form>div>p {
+    color: #1414147d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+form .division div p {
+    color: #1414147d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+form {
+    display: grid;
+    padding: 0 2rem;
+}
+
+form input {
+    width: 100%;
+    height: 2rem;
+    background: none;
+    border-bottom: 2px solid #4db3ff;
+    color: rgb(0, 0, 0);
+    cursor: text;
+    font-weight: 600;
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+.details-edit {
+    height: 1.8rem;
+    bottom: 0;
+    margin-bottom: 1.5rem;
+    right: 0;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+    font-size: 0.9rem;
+}
+
+form input.is-invalid {
+    border-color: red;
+}
+
+.form input {
+    background: white;
+}
+
+form input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form button {
+    font-weight: 700;
+    background-color: black;
+}
+
+form div {
+    position: relative;
+}
+
+form button.invalid {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.edit-user-form>a {
+    display: block;
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: rgb(44, 44, 44);
+}
+
+.edit-user-form>a>span {
+    margin-left: 0.3rem;
+    color: rgb(23, 23, 23);
+    font-size: 1.1rem;
+}
+
+.edit-user-form .last {
+    font-size: 0.7rem;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+}
+
+/* address card*/
+
+.delivery-address {
+    display: grid;
+    grid-template-columns: 48% 50%;
+    gap: 2%;
+    padding: 2rem 2rem 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, 0.2);
+}
+
+.address-card {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    display: grid;
+    margin-bottom: 1rem;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.address-card.active{
+    border-color: rgb(30%, 70%, 100%);
+}
+
+
+.address-card h2 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.address-card h4 {
+    color: #1414149d;
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.address-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+a.edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 1.7rem;
+    margin: 0.8rem 0.8rem 0 0;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+    font-size: 0.8rem;
+}
+
+.address-card button {
+    margin-top: 0.5rem;
+    background-color: #4db3ff;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+button.delete {
+    background-color: red;
+}
+
+.order-summary{
+    padding: 2rem 2rem 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, 0.2);
+}
+
+.items{
+    display: grid;
+    gap: 1rem;
+    border-bottom: 1px solid #1414149d;
+    padding-bottom: 1rem;
+}
+
+.items h3{
+    text-align: center;
+}
+
+.cart-item{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cart-item img{
+    height: 2rem;
+    width: auto;
+}
+
+.cart-item .item-details{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart-item h5{
+    font-size: 1rem;
+}
+
+.cart-item h5 small{
+    color: #1414149d;
+}
+
+.sub-summary {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+.total,
+.sub-summary .subtotal,
+.sub-summary .shipping,
+.sub-summary .tax {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sub-summary h5 {
+    color: #1414149d;
+    font-size: 0.9rem;
+}
+
+.sub-summary h5 span{
+    font-size: 0.7rem;
+}
+
+.sub-summary h4 {
+    font-size: 1.1rem;
+}
+
+.total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed #141414;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid black;
+}
+
+.sub-summary button {
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: 0.5rem;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* radio */
+
+
+.payment-method {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 0px 1px #4db3ff;
+    padding: 0.25rem;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 14px;
+  }
+  
+  .payment-method .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .payment-method .radio input {
+    display: none;
+  }
+  
+  .payment-method .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgb(0, 0, 0);
+    transition: all .15s ease-in-out;
+  }
+  
+  .payment-method .radio input:checked + .name {
+    background-color: #4db3ff;
+    color: white;
+    font-weight: 600;
+  }
+
+
+
+  button.place-order{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding:0.6rem 2rem;
+    border-radius: 0.5rem;
+    height: auto;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.no-address{
+    display: grid;
+    place-items: center;
+}
+
+.no-address .svg{
+    display: grid;
+    place-items: center;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width:600px) {
+
+    .checkout-container h1 {
+        display: none;
+    }
+
+    .checkout-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .delivery-address{
+        grid-template-columns: repeat(1,1fr);
+        padding: 0;
+        box-shadow: none;
+        margin-bottom: 2rem;
+    }
+
+    form{
+        padding: 0 0.5rem;
+    }
+
+    .order-summary{
+        padding:  1rem 1rem;
+    }
+
+    .order-summary img{
+        height: 3rem;
+    }
+
+    
+}
+

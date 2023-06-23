@@ -1,0 +1,12 @@
+<section class="shop">
+    <div (click)="goBack()" class="profile-header">
+        <a ><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+        <h3>{{param | titlecase}} Products</h3>
+        <a class="">
+            <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+        </a>
+    </div>
+    <div class="shop-container">
+        <app-products-list [products]="products$ | async"></app-products-list>
+    </div>
+</section>

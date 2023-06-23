@@ -1,0 +1,36 @@
+import { faAddressBook, faAngleLeft, faMinus, faTrashCan, faAngleRight, faArrowLeft, faArrowRight, faCheck, faChessKing, faClose, faEllipsisVertical, faPlus, faLariSign, faListDots, faPen, faPlaneDeparture, faTicket, faWallet, faRightFromBracket, faBellConcierge } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTurnRight, faSliders, faCreditCard, faBars, faShareNodes,faCircle,faCartShopping, faHeart, faHome, faSearch, faShop, faShoppingBag, faUser, faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
+
+export const solid = {
+    faArrowLeft,
+    faListDots,
+    faPen,
+    faEllipsisVertical,
+    faAngleLeft,
+    faAngleRight,
+    faPlaneDeparture,
+    faWallet,
+    faAddressBook,
+    faArrowRight,
+    faCheck,
+    faClose,
+    faPlus,
+    faTrashCan,
+    faMinus,
+    faRightFromBracket,
+    faSearch ,
+    faUser ,
+    faHeart ,
+    faShoppingBag,
+    faHome ,
+    faShop ,
+    faBars ,
+    faArrowTurnRight,
+    faCartShopping,
+    faCircle,
+    faBellConcierge,
+    faIndianRupeeSign,
+    faShareNodes,
+    faCreditCard,
+    faSliders
+}

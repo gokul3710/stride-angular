@@ -1,0 +1,32 @@
+<section class="profile">
+    <div class="profile-container">
+        <div class="profile-header">
+            <a [routerLink]="'/account'"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+            <h3>My Addresses</h3>
+            <a class="">
+                <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+            </a>
+        </div>
+        <div class="default-address" *ngIf="(addresses$ | async).length > 0">
+            <h3>Default Address:</h3>
+            <app-address-card *ngIf="addresses$" [address]="default" [default]="true"></app-address-card>
+        </div>
+
+        <div class="default-address">
+            <h3>Add New Address</h3>
+            <a [routerLink]="'add'">
+                <div class="add-address">
+                    <fa-icon [icon]="solid.faPlus"></fa-icon>
+                </div>
+            </a>
+        </div>
+        <div class="default-address" *ngIf="(addresses$ | async).length > 0">
+            <h3>Saved Address:</h3>
+            <ng-container *ngFor="let address of addresses$ | async">
+                <div *ngIf="!address.default" class="container">
+                    <app-address-card [address]="address" (event)="handleEvent($event)"></app-address-card>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</section>

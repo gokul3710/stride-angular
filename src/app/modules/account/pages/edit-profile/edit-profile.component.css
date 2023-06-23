@@ -1,0 +1,385 @@
+.profile{
+    min-height: 100vh;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: black;
+}
+
+.profile-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem 0;
+    align-items: center;
+}
+
+.profile-header a {
+    color: #141414;
+    font-size: 1.2rem;
+}
+
+
+/* .profile-header a p{
+    position: absolute;
+    right: 5%;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    background-color: #f5f5f5;
+} */
+
+.user {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
+
+.user-logo {
+    position: relative;
+    height: 7rem;
+    aspect-ratio: 1/1;
+}
+
+.user-logo img {
+    height: 7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+.user-logo image-cropper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.edit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+}
+
+.details-edit.edit.submit{
+    background-color: green;
+    display: none;
+}
+
+.user-details {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.user-names {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.user-names h3 {
+    font-size: 1.7rem;
+}
+
+.user-names h5 {
+    font-size: 1.3rem;
+    color: #1414149d;
+}
+
+.user-details a {
+    font-size: 1.3rem;
+    color: #1414149d;
+    border-bottom: 1px solid #1414149d;
+}
+
+.profile-controls {
+    display: grid;
+    margin-top: 1rem;
+}
+
+.profile-controls h5 {
+    color: #1414149d;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.control-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+.control-option {
+    width: 100%;
+    display: flex;
+    padding: 1rem 5%;
+    align-items: center;
+    border-radius: 1rem;
+    transition: all 300ms ease;
+}
+
+.control-option:hover {
+    background-color: #f5f5f5;
+    box-shadow:
+        -10px -10px 20px rgba(255, 255, 255, 1),
+        10px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+    display: flex;
+    height: 3rem;
+    font-size: 1.1rem;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+    color: white;
+    margin-right: 1.7rem;
+    transition: all 300ms ease;
+}
+
+.control-option:hover .icon {
+    scale: 1.1;
+}
+
+.control-option p {
+    color: #141414dd;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-option p a {
+    font-size: 1.3rem;
+    color: rgb(30%, 70%, 100%);
+    transition: all 300ms ease;
+}
+
+.control-option:hover p a {
+    font-size: 1.5rem;
+}
+
+
+@media screen and (max-width:600px) {
+    .profile {
+        width: 100vw;
+    }
+
+    .user-logo img {
+        height: 7rem;
+    }
+
+    .control-options {
+        grid-template-columns: 100%;
+
+    }
+}
+
+.edit-user-form {
+    height: auto;
+    border-radius: 0.3rem;
+    background-color: #ffffff;
+}
+
+button {
+    margin-top: 0.5rem;
+    width: 100%;
+    background-color: #4db3ff;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.edit-user-form h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+form>div>p {
+    color: #1414147d;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+form {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+form input {
+    width: 100%;
+    height: 2.5rem;
+    background: none;
+    border-bottom: 2px solid #4db3ff;
+    color: rgb(0, 0, 0);
+    cursor: text;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+form input[readonly] {
+    color: #141414ad;
+}
+
+.details-edit {
+    height: 1.8rem;
+    bottom: 0;
+    margin-bottom: 1.5rem;
+    right: 0;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+    font-size: 0.9rem;
+}
+
+.name {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+form input.is-invalid {
+    border-color: red;
+}
+
+.form input {
+    background: white;
+}
+
+form input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+form button {
+    font-weight: 700;
+    background-color: black;
+}
+
+form div {
+    position: relative;
+}
+
+form button.invalid {
+    background-color: rgb(0, 0, 0, 0.5);
+}
+
+.edit-user-form>a {
+    display: block;
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: rgb(44, 44, 44);
+}
+
+.edit-user-form>a>span {
+    margin-left: 0.3rem;
+    color: rgb(23, 23, 23);
+    font-size: 1.1rem;
+}
+
+.edit-user-form .last {
+    font-size: 0.7rem;
+}
+
+.error {
+    color: red;
+    margin-top: 0.3rem;
+    font-size: 0.7rem;
+    display: block;
+}
+
+
+
+/* modals */
+
+
+.image-crop-modal {
+    height: 90vh;
+    width: 40vw;
+    margin: auto;
+    background: white;
+    position: absolute;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+    right: 30vw;
+    top: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    padding: 2rem;
+}
+
+.image-crop-modal image-cropper {
+    width: 100%;
+}
+
+.image-crop-modal.active {
+    display: flex;
+}
+
+.image-crop-modal img {
+    border-radius: 50%;
+    height: 12rem;
+}
+
+.cropped-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.image-crop-modal fa-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1rem 1rem 0 0;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width:600px) {
+    .image-crop-modal {
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        top: 0;
+        right: unset;
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

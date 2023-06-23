@@ -1,0 +1,29 @@
+.shop-container{
+    background-color:  white;
+    padding: 1rem 0;
+}
+
+.profile-header {
+    width: 90%;
+    margin:  0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem 0;
+    align-items: center;
+}
+
+.profile-header a {
+    color: #141414;
+    font-size: 1.2rem;
+}
+
+.brand-image{
+    /* width: 90%; */
+    margin: 0 auto;
+    background: url(../../../../../assets/brands/nike2.jpg);
+    background-position: center;
+    height: 10rem;
+    background-size: initial;
+    /* background-position-x: right; */
+    /* background-repeat: no-repeat; */
+}

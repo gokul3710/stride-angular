@@ -1,0 +1,156 @@
+<section class="product">
+    <div class="profile-header">
+        <a (click)="goBack()"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+        <h3  *ngIf="product$ | async as product">{{product?.brand | titlecase}} {{product?.model}}</h3>
+
+        <div class="extras">
+            <a [routerLink]="'/cart'">
+                <fa-icon [icon]="solid.faCartShopping"></fa-icon>
+                <small *ngIf="(cartCount$ | async)">{{cartCount$ | async}}</small>
+            </a>
+            <a (click)="share(product)" *ngIf="product$ | async as product">
+                <fa-icon [icon]="solid.faShareNodes"></fa-icon>
+            </a>
+        </div>
+    </div>
+
+    <div class="product-details" *ngIf="product$ | async as product">
+        <div class="left">
+            <div class="sub-images">
+                <img (click)="changeImage($event)" [src]="product.images[0]" alt="">
+                <img (click)="changeImage($event)" [src]="product.images[1]" alt="">
+                <img (click)="changeImage($event)" [src]="product.images[2]" alt="">
+                <img (click)="changeImage($event)" [src]="product.images[3]" alt="">
+            </div>
+            <div class="main-image">
+                <img #mainImage [src]="product.images[0]" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="brand">
+                <a [routerLink]="'/brand/'+product.brand">
+                    <h5>{{product.brand | uppercase}}</h5>
+                </a>
+            </div>
+            <div class="name">
+                <h3>{{product.brand | titlecase}} {{product.model}} <span>{{product.color}} {{product.style}} Men's
+                        Shoe</span></h3>
+            </div>
+            <div class="price">
+                <h3>Mrp: {{product.price | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h3>
+                <h5>{{(product.price + 3000) | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h5>
+            </div>
+            <div class="description">
+                <p>{{product.description}}</p>
+                <p>Type: Unisex</p>
+                <p>Style: {{product.style}}</p>
+                <p>Size: {{product.size}}</p>
+                <p>Color: {{product.color}}</p>
+                <p>Material: {{product.material}}</p>
+                <p>Year: {{product.year}}</p>
+            </div>
+            <div class="btn btn-1">
+                <button (click)="handleAddToCart(product)" class="add-to-cart">Add To Cart</button>
+            </div>
+            <div class="btn">
+                <button (click)="openBuyNow()" class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <dialog #buyNow  *ngIf="product$ | async as product">
+        <div #buyNow class="direct-buy">
+            <a (click)="closeBuyNow()" class="close not-mobile"><fa-icon [icon]="solid.faClose"></fa-icon></a>
+            <div class="profile-header mobile">
+                <a (click)="closeBuyNow()"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+                <a><fa-icon [icon]="solid.faEllipsisVertical"></fa-icon></a>
+            </div>
+            <div class="left">
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img [src]="product.images[0]" alt="">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-name">
+                            <h2>{{product.brand | titlecase}} {{product.model}}</h2>
+                        </div>
+                        <div class="item-category">
+                            <h5>Price: {{product.price | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h5>
+                        </div>
+                        <div class="item-size">
+                            <h5>Size: {{product.size}}</h5>
+                        </div>
+                        <div class="item-color">
+                            <h5>Color: {{product.color}}</h5>
+                        </div>
+                        <div class="item-price">
+                            <div class="item-count">
+                                <fa-icon [icon]="solid.faMinus" (click)="changeCount(product,-1)"></fa-icon>
+                                <div class="count">{{productQuantity}}</div>
+                                <fa-icon [icon]="solid.faPlus" (click)="changeCount(product,1)"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="coupon">
+                    <h3 *ngIf="couponState">"{{couponCode}}" applied! <a class="remove"
+                            (click)="handleRemoveCoupon()">remove</a></h3>
+                    <div *ngIf="!couponState" class="coupon-input">
+                        <input [(ngModel)]="couponCode" type="text" placeholder="Enter Coupon Code">
+                        <a class="add" (click)="handleCouponSubmit(product)">Add</a>
+                    </div>
+                    <small *ngIf="couponError">{{couponError}}</small>
+                </div>
+            </div>
+
+            <div class="right">
+
+                <div class="checkout">
+                    <div class="sub-summary">
+                        <div class="subtotal">
+                            <h5>Subtotal <span>({{productQuantity}} items)</span></h5>
+                            <h5>{{(((product.price * productQuantity)) | getMRP |
+                                currency:'INR':'symbol':'1.2-2':'en-IN')}}</h5>
+                        </div>
+                        <div class="subtotal">
+                            <h5>Tax</h5>
+                            <h5>+ {{(product.price * productQuantity) | getTax |
+                                currency:'INR':'symbol':'1.2-2':'en-IN'}}</h5>
+                        </div>
+                        <div class="subtotal">
+                            <h5>Shipping</h5>
+                            <h5>{{'Free'}}</h5>
+                        </div>
+                        <div class="subtotal">
+                            <h5>Coupon</h5>
+                            <h5>- {{discount | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h5>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <h4>Total</h4>
+                        <h4>{{product.price* productQuantity - discount| currency:'INR':'symbol':'1.2-2':'en-IN'}}
+                        </h4>
+                    </div>
+                    <button (click)="handleBuyNow(product,productQuantity,discount)">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <ng-container  *ngIf="!(product$ | async)">
+
+        <app-product-page-shimmer ></app-product-page-shimmer>
+
+    </ng-container>
+
+</section>
+
+
+
+<!-- <div class="coupon">
+                        <h3 *ngIf="couponState">"{{couponCode}}" applied! <a class="remove"
+                                (click)="handleRemoveCoupon()">remove</a></h3>
+                        <div *ngIf="!couponState" class="coupon-input">
+                            <input #couponInput [(ngModel)]="couponCode" type="text" placeholder="Enter Coupon Code">
+                            <a class="add" (click)="handleCouponSubmit()">Add</a>
+                        </div>
+                        <small *ngIf="couponError">{{couponError}}</small>
+                    </div> -->

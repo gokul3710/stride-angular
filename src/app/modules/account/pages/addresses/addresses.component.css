@@ -1,0 +1,47 @@
+a{
+    color: black;
+}
+
+.profile-container{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.profile-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem 0;
+    align-items: center;
+}
+
+.profile-header a{
+    color: #141414;
+    font-size: 1.2rem;
+}
+
+.default-address h3{
+    margin-top: 2rem;
+    color: #1414149d;
+    margin-bottom: 0.7rem;
+}
+
+.add-address{
+    height: 8rem;
+    display: grid;
+    place-items: center;
+    border: 2px dashed rgb(30%, 70%, 100%);
+    border-radius: 1rem;
+    color: #4db3ff;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:600px) {
+    .profile{
+        width: 100vw;
+    }
+
+}
+

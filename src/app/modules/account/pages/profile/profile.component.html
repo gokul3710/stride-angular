@@ -1,0 +1,89 @@
+<section class="profile">
+    <div class="profile-container">
+        <div class="profile-header">
+            <a [routerLink]="'/'"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+            <h3>My Profile</h3>
+            <a class="">
+                <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+            </a>
+        </div>
+        <a [routerLink]="'edit'" *ngIf="user$ | async as user">
+            <div class="user">
+                <div class="user-logo">
+                    <img [src]="getUserImage(user?.image)" alt="">
+                </div>
+                <div class="user-details">
+                    <div class="user-names">
+                        <h3>{{user.firstName}} {{user.lastName}}</h3>
+                        <h5>@{{user.username}}</h5>
+                    </div>
+                    <a><fa-icon [icon]="solid.faPen"></fa-icon></a>
+                </div>
+            </div>
+        </a>
+
+        <div class="recent-buys" *ngIf="(deliveredOrders$ | async)!.length">
+            <h5>Recent Buys</h5>
+            <div class="delivered-orders">
+                <ng-container *ngFor="let order of deliveredOrders$ | async">
+                    <ng-container *ngFor="let product of order.items">
+                        <a [routerLink]="'/product/'+product._id">
+                            <div class="product-image">
+                                <img [src]="product.images[0]" alt="" srcset="">
+                            </div>  
+                        </a>
+                    </ng-container>
+                </ng-container>
+            </div>
+        </div>
+        <div class="profile-controls" *ngIf="user$ | async as user">
+            <h5>Dashboard</h5>
+            <div class="control-options">
+                <a [routerLink]="'address'">
+                    <div class="control-option">
+                        <a class="icon"><fa-icon [icon]="solid.faAddressBook"></fa-icon></a>
+                        <p>Address<a><fa-icon [icon]="solid.faAngleRight"></fa-icon></a></p>
+                    </div>
+                </a>
+                <a [routerLink]="'orders'">
+                    <div class="control-option">
+                        <a class="icon"><fa-icon [icon]="solid.faPlaneDeparture"></fa-icon></a>
+                        <p>Orders<a><fa-icon [icon]="solid.faAngleRight"></fa-icon></a></p>
+                    </div>
+                </a>
+                <a [routerLink]="'cart'">
+                    <div class="control-option">
+                        <a class="icon"><fa-icon [icon]="solid.faCartShopping"></fa-icon></a>
+                        <p>Cart<a><fa-icon [icon]="solid.faAngleRight"></fa-icon></a></p>
+                    </div>
+                </a>
+                <a [routerLink]="'payments'">
+                    <div class="control-option">
+                        <a class="icon"><fa-icon [icon]="solid.faCreditCard"></fa-icon></a>
+                        <p>Payments<a><fa-icon [icon]="solid.faAngleRight"></fa-icon></a></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="profile-actions" *ngIf="user$ | async as user">
+            <h5>My Account</h5>
+            <div class="actions">
+                <div class="action ">
+                    <a [routerLink]="'change-password'" href="">
+                        Change Your Password
+                    </a>
+                </div>
+                <div class="action logout">
+                    <a (click)="logout()">
+                        Log Out
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="loader-container" *ngIf="!(user$ | async)">
+        <app-loader></app-loader>
+    </div>
+</section>

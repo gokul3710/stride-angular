@@ -1,0 +1,8 @@
+<div class="brand-cards">
+    <h2>TOP BRANDS</h2>
+    <div class="brand-cards-container">
+        <ng-container *ngFor="let brand of brands">
+            <app-brand-single [brand]="brand"></app-brand-single>
+        </ng-container>
+    </div>
+</div>

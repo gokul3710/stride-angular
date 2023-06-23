@@ -1,0 +1,12 @@
+<div class="address-card">
+    <a *ngIf="!default" [routerLink]="'/account/address/edit/'+ address._id" class="details-edit edit"><fa-icon [icon]="solid.faPen"></fa-icon></a>
+    <h2>{{address.name}}</h2>
+    <h4>{{address.house}}, {{address.street}}</h4>
+    <h4>{{address.city}}, {{address.state}} {{address.pincode}}</h4>
+    <h4>India</h4>
+    <h4>Phone: {{address.phone}}</h4>
+    <div *ngIf="!default" class="address-options">
+        <button class="default" (click)="setAsDefault(address._id)">Set as Default</button>
+        <button class="delete" (click)="delete(address._id)">Delete</button>
+    </div>
+</div>

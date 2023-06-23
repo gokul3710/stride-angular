@@ -1,0 +1,102 @@
+<section class="profile">
+    <div class="profile-container">
+        <div class="profile-header">
+            <a [routerLink]="'/account'"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+            <h3>Edit Profile</h3>
+            <a style="opacity: 0;">
+                <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+                <!-- <p>Logout
+                    <fa-icon [icon]="solid.faArrowRight"></fa-icon>
+                </p> -->
+            </a>
+        </div>
+        <div class="user">
+            <div class="user-logo">
+                <img #image [src]="croppedImage" alt="">
+                <a #imageEdit class="image-edit edit" (click)="changeImage()"><fa-icon [icon]="solid.faPen"></fa-icon></a>
+                <input #imageInput type="file" hidden (change)="handleImageSubmit($event)">
+            </div>
+            <div class="user-details">
+                <div class="user-names">
+                    <h3>{{userData!.firstName}} {{userData!.lastName}}</h3>
+                    <h5>@{{userData!.username}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="edit-user-form">
+            <form [formGroup]="user" (ngSubmit)="updateDetails()">
+                <div class="name">
+                    <div class="firstName input-container">
+                        <p>First Name</p>
+                        <input formControlName='firstName' type="text" name="firstName"
+                            placeholder="Enter Your First Name"
+                            [ngClass]="{'is-invalid': r['firstName'].touched && r['firstName'].errors}">
+                        <small *ngIf="r['firstName'].touched && r['firstName'].errors?.['required']" class="error">Must
+                            Enter Your First Name</small>
+                    </div>
+                    <div class="lastName input-container">
+                        <p>Last Name</p>
+                        <input formControlName='lastName' type="text" name="lastName" placeholder="Enter Your Last Name"
+                            [ngClass]="{'is-invalid': r['lastName'].touched && r['lastName'].errors}">
+                        <small *ngIf="r['lastName'].touched && r['lastName'].errors?.['required']" class="error">Must
+                            Enter Your Last Name</small>
+                    </div>
+                </div>
+                <div class="username input-container">
+                    <p>Username</p>
+                    <input #username (input)="usernameError =''" formControlName='username' type="username" name="username"
+                        readonly placeholder="username Address"
+                        [ngClass]="{'is-invalid': (r['username'].touched && r['username'].errors) || usernameError}">
+                    <a #usernameEdit class="details-edit edit" (click)="usernameChange()"><fa-icon [icon]="solid.faPen"></fa-icon></a>
+                    <a #usernameSubmit class="details-edit edit submit" (click)="usernameChangeSubmit()"><fa-icon [icon]="solid.faCheck"></fa-icon></a>
+                    <small *ngIf="r['username'].touched && r['username'].errors?.['required']" class="error">Must Enter
+                        Your username</small>
+                    <small *ngIf="r['username'].touched && r['username'].errors?.['username']" class="error">Enter A
+                        Valid
+                        username</small>
+                    <small *ngIf="usernameError" class="error">Username Already Registered</small>
+                </div>
+                <div class="email input-container">
+                    <p>Email</p>
+                    <input (input)="emailError =''" formControlName='email' type="email" name="email" readonly
+                        placeholder="Email Address"
+                        [ngClass]="{'is-invalid': (r['email'].touched && r['email'].errors) || emailError}">
+                    <small *ngIf="r['email'].touched && r['email'].errors?.['required']" class="error">Must Enter
+                        Your Email</small>
+                    <small *ngIf="r['email'].touched && r['email'].errors?.['email']" class="error">Enter A Valid
+                        Email</small>
+                    <small *ngIf="emailError" class="error">Email Already Registered</small>
+                </div>
+                <div class="phone input-container">
+                    <p>Phone</p>
+                    <input #phone (input)="phoneError=''" formControlName='phone' type="tel" name="phone" readonly
+                        placeholder="Enter Your Phone Number"
+                        [ngClass]="{'is-invalid':( r['phone'].touched && r['phone'].errors) || phoneError}">
+                    <a #phoneEdit class="details-edit edit" (click)="phoneChange()"><fa-icon [icon]="solid.faPen"></fa-icon></a>
+                    <a #phoneSubmit class="details-edit edit submit" (click)="phoneChangeSubmit()"><fa-icon [icon]="solid.faCheck"></fa-icon></a>
+
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['required']" class="error">Must Enter
+                        Your Phone</small>
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['minlength']" class="error">Enter a
+                        Valid Phone Number</small>
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['maxlength']" class="error">Enter a
+                        Valid Phone Number</small>
+                    <small *ngIf="phoneError" class="error">Phone Number Already Registered</small>
+                </div>
+                <button [ngClass]="{'invalid':this.user.touched && this.user.invalid}" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="image-crop-modal" [ngClass]="{'active': imageChange}">
+    <fa-icon [icon]="solid.faClose" (click)="imageCropModalClose()"></fa-icon>
+    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1"
+        [resizeToWidth]="400" format="png" outputType="base64" (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed()">
+    </image-cropper>
+    <div class="cropped-image">
+        <img [src]="croppedImage" />
+        <button (click)="saveCroppedImage()">Save</button>
+    </div>
+</section>

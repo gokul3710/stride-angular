@@ -1,0 +1,39 @@
+<div class="product-card">
+    <div class="product-image">
+        <a [routerLink]="'/product/'+ product._id">
+            <img [src]="product.images[0]" alt="">
+        </a>
+        <div class="product-options">
+            <a [routerLink]="'/product/'+ product._id" class="view">
+                <fa-icon [icon]="faEye"></fa-icon>
+            </a>
+            <a class="cart" (click)="handleAddToCart()">
+                <fa-icon [icon]="faCartShopping"></fa-icon>
+            </a>
+            <a class="wishlist">
+                <fa-icon [icon]="faHeart"></fa-icon>
+            </a>
+            <a (click)="share()" class="share">
+                <fa-icon [icon]="faShareNodes"></fa-icon>
+            </a>
+        </div>
+    </div>
+    <div class="product-details">
+        <div class="product-name">
+            <h3 class="name">{{product.brand | titlecase}} </h3>
+            <h5 class="model">{{product.model}}</h5>
+        </div>
+        <div class="product-style">
+            <p>{{product.style}}<span>{{product.material}}</span><span>{{product.year}}</span></p>
+        </div>
+    </div>
+    <div class="product-extras">
+        <div class="product-price">
+            <h4>₹{{product.price}}</h4>
+            <h5>₹{{product.price + 3000 }}</h5>
+        </div>
+        <div class="off">
+            <small class="offer">{{product.price |  productOffer }}% off</small>
+        </div>
+    </div>
+</div>

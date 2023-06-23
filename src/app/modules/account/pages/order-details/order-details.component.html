@@ -1,0 +1,72 @@
+<div class="order">
+    <div class="profile-header">
+        <a [routerLink]="'/account/orders'"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+        <h3>Order <span>#{{orderId}}</span></h3>
+        <a class="">
+            <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+        </a>
+    </div>
+    <div class="order-details-container" *ngIf="order$ | async as order">
+        <div class="order-info">
+            <h4>Order Details</h4>
+            <div class="order-details">
+                <h5>Order Id: <span>#{{order._id}}</span></h5>
+                <h5>Ordered On: <span>{{order.tracking['placed'] | date:'dd-MM-yyyy'}}</span></h5>
+                <h5>Order Status: <span>{{order.status | titlecase}}</span></h5>
+                <!-- <h5>Payment Method: <span>{{order.payment.method}}</span></h5> -->
+                <button *ngIf="order.status !== 'cancelled'" (click)="showModal()" class="cancel">Cancel
+                    Order</button>
+
+            </div>
+        </div>
+        <div class="delivery-address">
+            <h4>Shipping Address</h4>
+            <div class="address">
+                <h5 class="name">{{order.deliveryAddress.name}}</h5>
+                <h5 class="house">{{order.deliveryAddress.house}}</h5>
+                <h5 class="place">{{order.deliveryAddress.street}} , {{order.deliveryAddress.city}}</h5>
+                <h5 class="state">{{order.deliveryAddress.state}} {{order.deliveryAddress.pincode}}</h5>
+                <h5 class="country">{{order.deliveryAddress.country}}</h5>
+            </div>
+        </div>
+        <div class="order-summary">
+            <h4>Order Summary</h4>
+            <div class="subtotal">
+                <h5>Subtotal: <span>{{order.total | getMRP | currency:'INR':'symbol':'1.2-2':'en-IN'}} </span></h5>
+                <h5>Tax: <span>+ {{order.total | getTax | currency:'INR':'symbol':'1.2-2':'en-IN'}} </span></h5>
+                <h5>Shipping:<span>- {{'0' | currency:'INR':'symbol':'1.2-2':'en-IN'}}</span></h5>
+                <h5>Discount:<span>- {{order.discount | currency:'INR':'symbol':'1.2-2':'en-IN'}}</span></h5>
+                <h5 class="total">Total:<span>{{order.total - order.discount |
+                        currency:'INR':'symbol':'1.2-2':'en-IN'}}</span></h5>
+            </div>
+        </div>
+    </div>
+    <div class="order-items-container" *ngIf="order$ | async as order">
+        <div class="items">
+            <h3>Order Items</h3>
+            <ng-container *ngFor="let item of order.items">
+
+                <div class="item">
+                    <img [src]="item.images[0]" alt="">
+                    <div class="item-details">
+                        <a style="color: #141414;" [routerLink]="'/product/'+ item._id ">
+                            <h4 class="item-name">{{item.brand.name | titlecase}} {{item.model}} {{item.color}}
+                                {{item.style}} {{item.material}}</h4>
+                        </a>
+                        <h5 class="item-price">Size: {{item.size}}</h5>
+                        <h5 class="item-price">Total: {{item.total | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h5>
+                        <h5 class="item-quantity">Quantity: {{item.quantity}}</h5>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <dialog #modal class="confirm-modal">
+        <app-confirm-modal [text]="'Are You Sure?'" (confirmed)="onConfirm($event)"></app-confirm-modal>
+    </dialog>
+</div>
+<section>
+    <div class="loader-container" *ngIf="!(order$ | async)">
+        <app-loader></app-loader>
+    </div>
+</section>

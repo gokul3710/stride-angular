@@ -1,0 +1,70 @@
+.notification {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.notification:hover {
+    background-color: #f5f5f5;
+}
+
+.notification.newNotification{
+    background-color: #f5f5f5;
+}
+
+.notification img {
+    height: 4rem;
+}
+
+.notification .details .title {
+    color: rgb(30%, 70%, 100%);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.notification .details .description {
+    color: #141414;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.notification .details .sub-description {
+    font-size: 0.8rem;
+    color: #1414149d;
+}
+
+.no-notification{
+    height: 90%;
+    display: grid;
+    place-items: center;
+}
+
+/* .no-notification svg{
+    height: 10rem;
+    width: 10rem;
+} */
+
+@media screen and (max-width:600px) {
+    .notification img {
+        width: 30%;
+        height: auto;
+    }
+
+    .notification .details .title{
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+    }
+
+    .notification .details .description{
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .notification .details .sub-description{
+        font-size: 1rem;
+    }
+}

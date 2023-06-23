@@ -1,0 +1,25 @@
+{
+  "name": "Stride Avenue",
+  "short_name": "Stride",
+  "icons": [
+    {
+      "src": "./assets/logos/logo-512-white.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/logos/logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/logos/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000"
+}

@@ -1,0 +1,14 @@
+.all-products{
+    padding: 2rem 0;
+}
+
+.loader{
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    z-index: 100;
+}

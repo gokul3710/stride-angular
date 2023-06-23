@@ -1,0 +1,47 @@
+.container{
+    min-height: 10rem;
+    max-width: 20rem;
+    aspect-ratio: 2/1;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    box-shadow:
+    -10px -10px 20px rgba(255, 255, 255, 1),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+
+.confirm-text{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.confirm-buttons{
+    /* padding: 2rem; */
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.confirm-buttons button{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    box-shadow:
+    -10px -10px 20px rgba(255, 255, 255, 1),
+    10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    transition: all 400ms ease;
+    cursor: pointer;
+}
+
+.confirm-buttons button.no:hover{
+    background-color: red;
+    color: white;
+}
+
+.confirm-buttons button.yes:hover{
+    background-color: green;
+    color: white;
+}
+

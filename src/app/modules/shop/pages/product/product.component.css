@@ -1,0 +1,725 @@
+section {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
+
+.profile-header {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1.5rem 0 2rem 0;
+    align-items: center;
+    overflow: hidden;
+}
+
+.profile-header h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.profile-header a {
+    color: #141414;
+    font-size: 1.2rem;
+}
+
+
+.profile-header .extras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.extras a{
+    position: relative;
+}
+
+.extras a > small{
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+  background-color: rgb(30%, 70%, 100%);
+  color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+}
+
+/* product */
+
+.product-details {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    place-items: center;
+    min-height: 80vh;
+}
+
+.product-details .left {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.product-details .right {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.main-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+}
+
+.sub-images {
+    display: grid;
+    gap: 1rem;
+}
+
+.sub-images img {
+    height: 6rem;
+    width: auto;
+    border-radius: 1rem;
+}
+
+/* right side */
+
+.brand h5 {
+    color: rgb(30%, 70%, 100%);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.name h3 {
+    font-size: 2rem;
+    margin-bottom: 0.6em;
+}
+
+.description p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #141414cd;
+    margin-bottom: 0.1rem;
+}
+
+.product-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn{
+    display: inline;
+
+}
+
+.add-to-cart,
+.buy-now {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 5rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transition: all 400ms ease;
+    border: 2px solid transparent;
+    color: white;
+    background-color: black;
+    display: inline;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.buy-now {
+    color: black;
+    background-color: white;
+    border-color: #1414149d;
+    transition: all 400ms ease;
+    margin-right: 0;
+}
+
+.buy-now:hover {
+    border-color: black;
+    scale: 1.01;
+}
+
+.add-to-cart:hover {
+    background-color: #080808;
+    scale: 1.01;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.price h3 {
+    font-size: 1.5rem;
+}
+
+.price h5 {
+    font-size: 1.1rem;
+    color: #1414149d;
+    text-decoration: line-through;
+}
+
+.cart {
+    font-size: 1.4rem;
+}
+
+.mobile {
+    display: none;
+}
+
+
+
+/* direct buy */
+
+.direct-buy{
+    padding: 3rem 3rem 3rem 3rem;
+    background-color: white;
+    display: grid;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    box-shadow:
+        -5px -5px 10px rgba(0, 0, 0, 0.2),
+        5px 5px 10px rgba(0, 0, 0, 0.2);
+    grid-template-columns: repeat(2,1fr);
+}
+
+.direct-buy .close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #141414;
+    font-size: 1.1rem;
+}
+
+.direct-buy .left{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.direct-buy button{
+    width: 100%;
+    padding: 0.7rem 0;
+    border-radius: 0.5rem;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* cart item */
+
+.cart-item {
+    padding: 1rem;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    place-items: center;
+    gap: 1rem;
+    border: 1.4px solid transparent;
+    transition: all 300ms ease;
+}
+
+.cart-item:hover {
+    border-color: rgb(30%, 70%, 100%);
+}
+
+.item-image img {
+    height: 5rem;
+}
+
+.item-details {
+    width: 100%;
+    display: grid;
+    position: relative;
+}
+
+.item-name {
+    margin-bottom: 0.3rem;
+    overflow: hidden;
+}
+
+.item-name h2{
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-category h5,
+.item-size h5,
+.item-color h5,
+.item-price h5,
+.count h5,
+.item-name h5,
+.item-image h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1414149d;
+    margin-bottom: 0.2rem;
+}
+
+.item-price {
+    margin-top: 0.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item-price h3 {
+    font-size: 1.2rem;
+}
+
+
+.item-price h3 span {
+    text-decoration: line-through;
+    margin: 0.4rem;
+    font-size: 1rem;
+    color: #1414149d;
+}
+
+.item-count {
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+}
+
+.item-count fa-icon {
+    background: white;
+    box-shadow:
+        -5px -5px 10px rgba(255, 255, 255, 1),
+        5px 5px 10px rgba(0, 0, 0, 0.2);
+    color: #1414149d !important;
+    padding: 0.2rem 0.4rem;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.item-count fa-icon:hover {
+    color: rgb(30%, 70%, 100%) !important;
+}
+
+.count {
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 2rem;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+}
+
+
+/* summary */
+
+.cart-summary {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    position: sticky;
+    top: 2rem;
+}
+
+/* coupon */
+
+.direct-buy .coupon,
+.direct-buy .checkout {
+    padding: 2rem;
+    box-shadow: 0rem 0rem 1rem 0rem rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+}
+
+.direct-buy .coupon {
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.coupon h2{
+    margin-bottom: 0.5rem;
+}
+
+.coupon h3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.coupon a {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.coupon a.remove {
+    color: rgba(255, 0, 0, 0.648);
+}
+
+.coupon a.add {
+    color: rgba(0, 128, 0, 0.648);
+}
+
+.coupon-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coupon input {
+    width: 80%;
+    height: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.4rem 0.6rem;
+}
+
+
+.coupon input::placeholder {
+    font-size: 1rem;
+}
+
+.coupon small {
+    margin-top: 0.5rem;
+    color: red;
+    font-weight: 500;
+}
+
+.direct-buy .sub-summary {
+    display: grid;
+    gap: 1rem;
+}
+
+.direct-buy .total,
+.direct-buy .sub-summary .subtotal,
+.direct-buy .sub-summary .shipping,
+.direct-buy .sub-summary .tax {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.direct-buy h5 {
+    color: #1414149d;
+    font-size: 0.9rem;
+}
+
+.direct-buy h5 span {
+    font-size: 0.8rem;
+}
+
+.direct-buy h4 {
+    font-size: 1.3rem;
+}
+
+.direct-buy .total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.direct-buy button {
+    width: 100%;
+    padding: 0.8rem 0;
+    border-radius: 0.5rem;
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cart-container.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart-container.empty svg {
+    height: 25rem;
+    max-width: 100%;
+
+}
+
+.cart-container.empty h2 {
+    color: rgb(0, 145, 255);
+}
+
+.cart-container.empty button {
+    /* width: 100%; */
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    background-color: rgb(0, 145, 255);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    /* box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2); */
+}
+
+.edit {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    height: 2rem;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 50%;
+    background-color: rgb(30%, 70%, 100%);
+}
+
+.details-edit.edit.submit {
+    background-color: green;
+    display: none;
+}   
+
+dialog {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow:
+        10px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+
+
+@media screen and (max-width:700px) {
+
+    .not-mobile {
+        display: none !important;
+    }
+
+    .mobile{
+        display: flex;
+    }
+
+    .product-details {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        /* margin-bottom: 2rem; */
+    }
+
+    .product-details .left {
+        display: grid;
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .product-details .right {
+        width: 100%;
+    }
+
+    .product-details .left .sub-images {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        order: 2;
+        gap: 0.5rem;
+
+    }
+
+    .product-details .left .sub-images img {
+        height: auto;
+        width: 100%;
+    }
+
+    .product-details .left .main-image img {
+        width: 100%;
+    }
+
+    .name h3 {
+        margin-bottom: 0.6rem;
+        font-size: 1.7rem;
+    }
+
+    .name h3 span {
+        display: none;
+    }
+
+    .product-options {
+        margin-top: 1.5rem;
+    }
+
+    .price h3 {
+        font-size: 1.2rem;
+    }
+
+    .price h5 {
+        font-size: 1rem;
+        text-decoration: line-through;
+        color: #1414149d;
+    }
+
+    .product-options {
+        flex-direction: column;
+
+    }
+
+    .btn.btn-1{
+        position: sticky;
+        padding: 1rem 0 1rem 0;
+        background-color: white;
+        display: flex;
+        bottom: 0;
+        border: none;
+    }
+
+    .buy-now{
+        width: 100%;
+        margin: 0;
+    }
+
+    .add-to-cart {
+        width: 100%;
+        margin: 0;
+    }
+
+    .cart,
+    .count,
+    .item-count fa-icon {
+        font-size: 1.1rem;
+    }
+
+    .add-to-cart>fa-icon {
+        font-size: 2rem;
+    }
+
+    dialog{
+        width: 100%;
+        height: 100%;
+    }
+    
+    .direct-buy{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 0 1rem 1rem 1rem;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .direct-buy .left{
+        gap: 1rem;
+
+    }
+
+    .direct-buy .coupon{
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    dialog .profile-header{
+        padding-bottom: 0;
+    }
+
+    .cart-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        /* margin: 1rem 0 3rem 0; */
+    }
+
+    .item-details {
+        display: grid;
+        grid-template-columns: unset;
+        place-items: unset;
+    }
+
+    .item-details h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .item-name {
+        margin-bottom: 0.2rem;
+    }
+
+    .item-category h5,
+    .item-size h5,
+    .item-color h5 {
+        font-size: 500;
+        color: #1414149d;
+        font-size: 1rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .item-image img {
+        height: 5rem;
+        margin-right: 1rem;
+    }
+
+    .item-price {
+        width: 100%;
+        gap: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .item-price h3 {
+        font-size: 1.2rem;
+    }
+
+    .item-price h3 span {
+        display: none;
+    }
+
+    .item-count {
+        margin-top: 0.5rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .count{
+        width: 3rem;
+    }
+
+    .cart-item.not-mobile {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:399px) {
+    .item-details h2{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,26 @@
+.brand-cards{
+    padding: 2rem 0 0 4%;
+}
+
+.brand-cards h2{
+    margin-bottom: 1.5rem;
+}
+
+
+.brand-cards-container{
+    display: flex;
+    padding-right: 4%;
+    overflow-y: scroll;
+    gap: 1.5rem;
+    z-index: 0;
+}
+
+.brand-cards-container::-webkit-scrollbar{
+    display: none;
+}
+
+@media screen and (max-width:599px) {
+    .brand-cards-container {
+        gap: 1rem;
+    }
+}

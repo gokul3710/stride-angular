@@ -1,0 +1,74 @@
+<section class="profile">
+    <div class="profile-container">
+        <div class="profile-header">
+            <a [routerLink]="'/account/address'"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+            <h3>Edit Address</h3>
+            <a class="">
+                <fa-icon style="opacity: 0;" [icon]="solid.faEllipsisVertical"></fa-icon>
+            </a>
+        </div>
+        <div class="edit-user-form">
+            <form [formGroup]="address" (ngSubmit)="handleSubmitAddress()">
+                <div class="name input-container">
+                    <input formControlName='name' type="text" name="name" placeholder="Enter Recipient's Name"
+                        [ngClass]="{'is-invalid': r['name'].touched && r['name'].errors}">
+                    <small *ngIf="r['name'].touched && r['name'].errors?.['required']" class="error">Must
+                        Enter a Name</small>
+                </div>
+                <div class="phone input-container">
+                    <input formControlName='phone' type="tel" name="phone" placeholder="Enter Your Phone Number"
+                        [ngClass]="{'is-invalid':( r['phone'].touched && r['phone'].errors)}">
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['required']" class="error">Must Enter
+                        Your Phone number</small>
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['minlength']" class="error">Enter a
+                        Valid Phone Number</small>
+                    <small *ngIf="r['phone'].touched && r['phone'].errors?.['maxlength']" class="error">Enter a
+                        Valid Phone Number</small>
+                </div>
+                <div class="house input-container">
+                    <input formControlName='house' type="text" name="house" placeholder="Enter Your house Number"
+                        [ngClass]="{'is-invalid':( r['house'].touched && r['house'].errors)}">
+                    <small *ngIf="r['house'].touched && r['house'].errors?.['required']" class="error">Must Enter
+                        Your House Address</small>
+                </div>
+                <div class="division">
+                    <div class="street input-container">
+                        <input formControlName='street' type="text" name="street" placeholder="Street / Village"
+                            [ngClass]="{'is-invalid':( r['street'].touched && r['street'].errors)}">
+                        <small *ngIf="r['street'].touched && r['street'].errors?.['required']" class="error">Must Enter
+                            Your Street</small>
+                    </div>
+                    <div class="city input-container">
+                        <input formControlName='city' type="text" name="city" placeholder="City / District"
+                            [ngClass]="{'is-invalid':( r['city'].touched && r['city'].errors)}">
+                        <small *ngIf="r['city'].touched && r['city'].errors?.['required']" class="error">Must Enter
+                            Your City</small>
+                    </div>
+                </div>
+                <div class="division">
+                    <div class="state input-container">
+                        <input formControlName='state' type="text" name="state" placeholder="Enter Your State"
+                            [ngClass]="{'is-invalid':( r['state'].touched && r['state'].errors)}">
+                        <small *ngIf="r['state'].touched && r['state'].errors?.['required']" class="error">Must Enter
+                            Your State</small>
+                    </div>
+                    <div class="pincode input-container">
+                        <input formControlName='pincode' type="text" name="pincode" placeholder="Enter Your Pincode"
+                            [ngClass]="{'is-invalid': (r['pincode'].touched && r['pincode'].errors)}">
+                        <small *ngIf="r['pincode'].touched && r['pincode'].errors?.['required']" class="error">Must Enter
+                            Your Pincode</small>
+                        <small *ngIf="r['pincode'].touched && r['pincode'].errors?.['minlength']" class="error">Enter a
+                            Valid Pincode Number</small>
+                        <small *ngIf="r['pincode'].touched && r['pincode'].errors?.['maxlength']" class="error">Enter a
+                            Valid Pincode Number</small>
+                    </div>
+                </div>
+                <div class="landmark input-container">
+                    <input formControlName='landmark' type="landmark" name="landmark"
+                        placeholder="Landmark   (optional)">
+                </div> 
+                <button [ngClass]="{'invalid':this.address.touched && this.address.invalid}" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</section>

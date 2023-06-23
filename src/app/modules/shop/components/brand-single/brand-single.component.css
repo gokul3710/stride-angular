@@ -1,0 +1,34 @@
+.brand-card {
+    padding: 0.4rem 0.2rem;
+    background: white;
+    height: 7rem;
+    aspect-ratio: 16/9;
+    border-radius: 1rem;
+    background-color: #f0f0f0;
+    transition: all 400ms none;
+    overflow: hidden;
+    cursor: pointer;
+    scroll-snap-align: start;
+    display: grid;
+    place-items: center;
+}
+
+.brand-card img {
+    height: 6rem;
+    transition: transform 0.5s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.2);
+    border-radius: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .brand-card {
+        height: 5rem;
+    }
+
+    .brand-card img{
+        height: 4rem;
+    }
+}

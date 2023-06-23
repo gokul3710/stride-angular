@@ -1,0 +1,13 @@
+<ng-container *ngIf="(topBrandProducts$ | async)?.length">
+    <app-banners [banners]="banners$ | async"></app-banners>
+    <app-brands [brands]="brands$ | async"></app-brands>
+    <div class="all-products">
+        <app-products-list [title]="'Top Products'" [products]="topBrandProducts$ | async"></app-products-list>
+    </div>
+    <div class="all-products">
+        <app-products-list [title]="'More than 30% off'" [products]="offerProducts$ | async"></app-products-list>
+    </div>
+</ng-container>
+<!-- <div #loader class="loader" >
+    <app-home-loader></app-home-loader>
+</div> -->

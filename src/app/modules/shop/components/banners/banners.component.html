@@ -1,0 +1,43 @@
+<main>
+
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="slider-container" [ngClass]="{'has-scrollbar': banners?.length > 1}">
+                
+                <ng-container *ngFor="let banner of banners">
+
+                    <div class="slider-item">
+
+                        <img [src]="banner.image" alt="women's latest fashion sale" class="banner-img">
+    
+                        <div class="banner-content">
+    
+                            <p class="banner-subtitle">{{banner.subtitle | titlecase}}</p>
+    
+                            <h2 class="banner-title">{{banner.title | uppercase}}</h2>
+    
+                            <p class="banner-text">
+                                {{banner.text}}
+                            </p>
+    
+                            <a href="#" class="banner-btn">{{banner.btnText}}</a>
+    
+                        </div>
+    
+                    </div>
+    
+                </ng-container>
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</main>

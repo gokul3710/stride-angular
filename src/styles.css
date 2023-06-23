@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+/* @import "@fortawesome/fontawesome-free/scss/fontawesome";   */
+/*  */
+
+@import "~ngx-toastr/toastr";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    
+}
+
+:root{
+    --bg-primary: #fff;
+    --bg-secondary: #f0f0f1;
+    --color-primary: #4738cb;
+    --color-secondary: #33188f;
+    --color-white: #000;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+::-webkit-scrollbar{
+    width: 0.3rem;
+    background: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(30%, 70%, 100%);
+    border-radius: 0.25rem;
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+i{
+    color: white;
+    border: 0 none;
+    background: transparent;
+}
+
+button{
+    background: none;
+}

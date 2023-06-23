@@ -1,0 +1,40 @@
+<section class="cart">
+    <div class="profile-header">
+        <a routerLink="/account"><fa-icon [icon]="solid.faAngleLeft"></fa-icon></a>
+        <h3>Payments</h3>
+        <a class="">
+            <fa-icon [icon]="solid.faEllipsisVertical"></fa-icon>
+        </a>
+    </div>
+    <div class="payments-container">
+        <ng-container *ngFor="let payment of payments">
+            <a style="color: #141414;" [routerLink]="'../order/' + payment.order._id">
+                <div class="payment">
+                    <div class="payment-icon" [ngClass]="{refunded: payment.status === 'refunded'}">
+                        <fa-icon [icon]="solid.faIndianRupeeSign"></fa-icon>
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-left">
+                            <div class="payment-date">
+                                <h5>{{payment.date | date:'dd MMM yyyy, hh:mm a'}} </h5>
+                            </div>
+                            <div class="payment-method">
+                                <h4>{{payment.status | titlecase}} via {{payment.method | titlecase}}</h4>
+                            </div>
+                            <div class="options">
+                                <h5>Transaction Id: {{payment._id}}</h5>
+                            </div>
+                        </div>
+                        <div class="payment-amount">
+                            <h3>{{payment.amount | currency:'INR':'symbol':'1.2-2':'en-IN'}}</h3>
+                        </div>
+                        <div class="more">
+                            <fa-icon [icon]="solid.faAngleRight"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </ng-container>
+    </div>
+</section>
