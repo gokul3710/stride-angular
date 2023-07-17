@@ -92,11 +92,11 @@
                     </div>
                 </div>
                 <div class="coupon">
-                    <h3 *ngIf="couponState">"{{couponCode}}" applied! <a class="remove"
+                    <h3 *ngIf="couponState">"{{couponCode}}" applied! <a style="cursor: pointer;" class="remove"
                             (click)="handleRemoveCoupon()">remove</a></h3>
                     <div *ngIf="!couponState" class="coupon-input">
                         <input [(ngModel)]="couponCode" type="text" placeholder="Enter Coupon Code">
-                        <a class="add" (click)="handleCouponSubmit(product)">Add</a>
+                        <a class="add" style="cursor: pointer;" (click)="handleCouponSubmit(product)">Add</a>
                     </div>
                     <small *ngIf="couponError">{{couponError}}</small>
                 </div>

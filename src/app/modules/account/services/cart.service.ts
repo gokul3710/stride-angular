@@ -45,7 +45,6 @@ export class CartService implements OnDestroy {
     if (localStorage.getItem('token')) {
       this.http.get<cartProductModel[]>(`${host}${Routes.GET_CART_PRODUCTS}`).subscribe({
         next: (response) => {
-          console.log(response);
           this.cartProducts$.next(response);
           this.getCartTotal(0)
         },
@@ -97,7 +96,6 @@ export class CartService implements OnDestroy {
         let cartProducts = this.cartProducts$.getValue()
         let deleteProduct = cartProducts.filter(cartProduct => cartProduct.item === productId)[0]
         cartProducts = cartProducts.filter(cartProduct => cartProduct.item !== productId)
-        console.log(deleteProduct);
         this.cartProducts$.next(cartProducts)
         this.getCartTotal(-deleteProduct.quantity)
         this.toastr.error('Product Removed From Cart')
@@ -209,6 +207,7 @@ export class CartService implements OnDestroy {
       } else {
         this.toastr.error(err.error.message)
         console.log('Error fetching cartExtras:', err);
+        return err.eroor.message
       }
     }
   }
@@ -236,8 +235,6 @@ export class CartService implements OnDestroy {
   async useCouponDirectBuy({couponCode, subtotal}): Promise<any> {
     try {
       const coupon = await this.http.get<couponModel>(`${host}${Routes.GET_COUPON_BY_CODE}/${couponCode}`, {}).toPromise();
-      console.log(coupon);
-      
       if (coupon) {
         if (coupon?.minPurchase > subtotal) {
           return { error: 'Minimum purchase not met.' }
@@ -264,6 +261,14 @@ export class CartService implements OnDestroy {
       }
     }
   }
+
+  // removeCouponDirectBuy(){
+  //   let cartExtras = this.cartExtras$.getValue()
+  //   cartExtras.discount = 0
+  //   this.cartExtras$.next(cartExtras)
+  //   this.getCartTotal(0)
+  //   this.toastr.error("Coupon Removed")
+  // }
 
 
 

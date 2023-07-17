@@ -193,7 +193,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
         amount:  amount,
         currency: 'INR',
         name: 'STRIDE AVENUE',
-        description: 'Payment for your order',
+        description: 'Payment for your order', 
         handler: (response: any) => {
           
           let payment =  {

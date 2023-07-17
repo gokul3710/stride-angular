@@ -28,8 +28,6 @@ export class AddressService implements OnDestroy {
   fetchAddresses(){
     this.getAddressSubscription = this.http.get<{addresses:addressModel[]}>(`${host}${Routes.GET_ADDRESS}`).subscribe({
       next: (response) => {
-        console.log(response);
-        
         this.addresses$.next(response.addresses);
       },
       error: (err) => {
@@ -45,10 +43,17 @@ export class AddressService implements OnDestroy {
 
   addNewAddress(address: addressModel , props?: any) {
     this.addNewAddressSubscription = this.http.post(`${host}${Routes.ADD_ADDRESS}`, address).subscribe({
-      next: (response) => {
+      next: (response:{response: string}) => {
+        
         let addresses = this.addresses$.getValue()
-        address._id = (response as string)
-        addresses = [...addresses, address]
+        address._id = response.response
+        if(addresses.length){
+          addresses = [...addresses, address]
+        }else{
+          address.default = true
+          addresses = [address]
+        }
+        
         this.addresses$.next(addresses)
         if(!props || !props?.checkout){
           this.router.navigateByUrl('/account/address')
@@ -94,12 +99,8 @@ export class AddressService implements OnDestroy {
   }
 
   deleteAddress(addressId: string) {
-    console.log(`${host}${Routes.DELETE_ADDRESS}/${addressId}`);
-    
     this.deleteAddressSubscription = this.http.delete(`${host}${Routes.DELETE_ADDRESS}/${addressId}`).subscribe({
       next: (response) => {
-        console.log(response);
-        
         let addresses = this.addresses$.getValue()
         addresses = addresses.filter(address => address._id !== addressId)
         this.addresses$.next(addresses)

@@ -103,7 +103,6 @@ export class EditProfileComponent implements OnInit,OnDestroy {
 
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-    console.log(this.croppedImage);
   }
 
   imageLoaded() {

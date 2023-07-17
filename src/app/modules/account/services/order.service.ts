@@ -55,7 +55,6 @@ export class OrderService implements OnDestroy {
   fetchOrders() {
     this.http.get<orderModel[]>(`${host}${Routes.GET_ORDERS}`).subscribe({
       next: (response) => {
-        console.log(response);
         this.orders$.next(response)
         return true
       },
@@ -89,8 +88,6 @@ export class OrderService implements OnDestroy {
             return order
           }
         });
-        console.log(orders);
-        
         this.orders$.next(orders)
         this.order$.next(orderResponse)
       },

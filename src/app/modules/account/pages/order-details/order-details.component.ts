@@ -43,8 +43,6 @@ export class OrderDetailsComponent implements OnInit, OnDestroy {
   }
 
   goBack() {
-    console.log(this.location);
-
     this.location.back()
   }
 

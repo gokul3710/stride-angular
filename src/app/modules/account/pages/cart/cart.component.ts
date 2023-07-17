@@ -65,10 +65,10 @@ export class CartComponent implements OnInit,OnDestroy {
     }
     let error = await this.cartService.useCoupon(coupon)
     if (error) {
-      if (error.error.message.includes("Invalid Request")) {
+      if (error.includes("Invalid Request")) {
         this.couponError = "Must Enter a Coupon Code"
       }
-      this.couponError = error.error.message
+      this.couponError = error
     } else {
       this.couponError = ''
       this.couponState = true

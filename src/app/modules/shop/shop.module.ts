@@ -16,7 +16,6 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { TrendingProductsComponent } from './components/trending-products/trending-products.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { ProductsComponent } from './pages/products/products.component';
-import { ProductService } from './services/product.service';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { NotificationComponent } from './components/notification/notification.component';
 import { BannersComponent } from './components/banners/banners.component';

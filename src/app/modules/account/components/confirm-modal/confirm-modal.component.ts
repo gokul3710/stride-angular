@@ -11,13 +11,10 @@ export class ConfirmModalComponent {
   @Output() confirmed = new EventEmitter<boolean>();
 
   onConfirm() {
-    console.log(true);
-    
     this.confirmed.emit(true);
   }
 
   onCancel() {
-    console.log(false);
     this.confirmed.emit(false);
   }
 

@@ -13,9 +13,6 @@ export class ImageCacheInterceptor implements HttpInterceptor {
     if (request.method === 'GET' && request.url.endsWith('.jpg' || '.png' || '.gif' || '.jpeg')) {
       const cachedResponse = this.cache.get(request.url);
       if (cachedResponse) {
-        console.log("from cache");
-        
-
         // Return cached response
         return of(cachedResponse);
       }
@@ -24,8 +21,6 @@ export class ImageCacheInterceptor implements HttpInterceptor {
           // Cache response
           if (event instanceof HttpResponse) {
             this.cache.set(request.url, event);
-            console.log("cached");
-            
           }
         })
       );

@@ -64,8 +64,6 @@ export class SigninComponent implements OnInit,OnDestroy {
   async handleGoogleLogin(){
     this.signinGoogleSubscription = (await this.userAuthService.loginByGoogle()).subscribe(
       (response: any)=>{
-        console.log(response);
-        
         if(response.state === 'login'){
           localStorage.setItem('token', response.token)
           this.userAccountService.setUser()

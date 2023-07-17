@@ -72,7 +72,6 @@ export class SignupComponent implements OnInit,OnDestroy {
         otp: this.user.value.otp,
         gender: this.user.value.gender
       }
-      console.log(user);
       
       this.signupSubscription = this.userAuthService.signup(user).subscribe(
         (response)=>{

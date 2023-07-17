@@ -6,7 +6,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { AddressesComponent } from './pages/addresses/addresses.component';
 import { AddAddressComponent } from './pages/add-address/add-address.component';
 import { CartComponent } from './pages/cart/cart.component';
-import { AuthGuard } from './guards/auth.guard';
 import { EditAddressComponent } from './pages/edit-address/edit-address.component';
 import { ChangePasswordComponent } from './pages/change-password/change-password.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';

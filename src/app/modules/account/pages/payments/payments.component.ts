@@ -28,7 +28,6 @@ export class PaymentsComponent implements OnInit,OnDestroy {
       this.getPaymentsSubscription = this.orderService.getPayments().subscribe(
       (response)=>{
         this.payments = response
-        console.log(response);
       }
     )
   }

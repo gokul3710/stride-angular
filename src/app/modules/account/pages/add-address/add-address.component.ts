@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserAccountService } from '../../services/user-account.service';
 import { AddressService } from '../../services/address.service';
 import { solid } from 'src/app/icons/solid.icons';
 
@@ -19,7 +18,7 @@ export class AddAddressComponent implements OnInit {
   //icons
   solid = solid
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private userAccountService: UserAccountService, private addressService: AddressService) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private addressService: AddressService) { }
 
   ngOnInit(): void {
     this.address = this.formBuilder.group({

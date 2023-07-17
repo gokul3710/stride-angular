@@ -157,6 +157,10 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   async handleCouponSubmit(product: productModel) {
+    if(!this.couponCode.trim()){
+      this.couponError = "Must Enter a Coupon Code"
+      return
+    }
     let coupon = {
       couponCode: this.couponCode,
       subtotal: product.price * this.productQuantity
@@ -172,18 +176,16 @@ export class ProductComponent implements OnInit, OnDestroy {
       this.discount = response.amount
       this.couponError = ''
       this.couponState = true
+      this.toastr.success("Coupon Added")
     }
   }
 
   async handleRemoveCoupon() {
-    let error = await this.cartService.removeCoupon()
-    if (error) {
-      this.couponError = error.error
-    } else {
+      this.discount = 0
       this.couponState = false
       this.couponError = ''
       this.couponCode = ''
-    }
+      this.toastr.error("Coupon Removed")
   }
 
   openBuyNow() {

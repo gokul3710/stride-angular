@@ -22,6 +22,7 @@ export class AddressesComponent implements OnInit {
 
   ngOnInit(): void {
     this.addresses$ = this.addressService.addresses
+    this.addressService.addresses.subscribe((re)=>{console.log(re)})
   }
 
   get default(): addressModel {

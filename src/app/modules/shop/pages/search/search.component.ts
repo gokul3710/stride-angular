@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
   }
 
   handleSearch(event: any){
-    console.log(event.target.value);
     this.productService.getSearchProduct(event.target.value).subscribe(
       (response)=>{
         this.products = response
