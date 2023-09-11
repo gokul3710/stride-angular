@@ -7,7 +7,7 @@ import { addressModel } from 'src/app/models/address.model';
 import { Subscription } from 'rxjs';
 import { GetTaxPipe } from '../../pipes/get-tax.pipe';
 import { GetMRPPipe } from '../../pipes/get-mrp.pipe';
-import { host } from '../../../../../environments/environment';
+import { host, razorpay} from '../../../../../environments/environment';
 import { AddressService } from '../../services/address.service';
 import { solid } from 'src/app/icons/solid.icons';
 import { CartService } from '../../services/cart.service';
@@ -189,18 +189,18 @@ export class CheckoutComponent implements OnInit,OnDestroy {
       let amount = (this.cartTotal.subtotal - this.cartTotal.discount) * 100
       
       const options = {
-        key: 'rzp_test_UQCn88IlkSNzYQ', // replace with your API key
+        key: razorpay.name,
         amount:  amount,
-        currency: 'INR',
-        name: 'STRIDE AVENUE',
-        description: 'Payment for your order', 
+        currency: razorpay.currency,
+        name: razorpay.name,
+        description: razorpay.description, 
         handler: (response: any) => {
           
           let payment =  {
             method: 'RAZORPAY',
             status: 'paid',
             amount: this.cartTotal.subtotal - this.cartTotal.discount,
-            currency: 'INR',
+            currency: razorpay.currency,
             date: new Date(),
             transactionId: response.razorpay_payment_id 
           }
@@ -216,14 +216,14 @@ export class CheckoutComponent implements OnInit,OnDestroy {
         },
         
         prefill: {
-          email: 'admin@stride.com',
-          contact: '7810340312'
+          email: razorpay.email,
+          contact: razorpay.contact
         },
         notes: {
-          address: 'Your Company Address'
+          address: razorpay.address
         },
         theme: {
-          color: '#4d99ff'
+          color: razorpay.color
         }
       };
       this.rzp = new Razorpay(options);
@@ -242,12 +242,4 @@ export class CheckoutComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
       this.cartService.completeDirectBuy()
   }
-
-  // ngOnDestroy(){
-  //   this.addAddressSubscription.unsubscribe()
-  //   this.placeOrderSubscription.unsubscribe()
-  //   this.getCartExtrasSubscription.unsubscribe()
-  //   this.getCartProductsSubscription.unsubscribe()
-  //   this.getAllAddressesSubscription.unsubscribe()
-  // }
 }
