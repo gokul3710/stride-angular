@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
-import { userModel } from 'src/app/models/user.model';
+import { userModel } from 'src/app/core/models/user.model';
 import { UserAccountService } from '../account/services/user-account.service';
 
 @Component({

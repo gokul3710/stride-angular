@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { host } from '../../../../../environments/environment';
-import { brandModel } from 'src/app/models/brand.model';
+import { brandModel } from 'src/app/core/models/brand.model';
 
 @Component({
   selector: 'app-brand-single',

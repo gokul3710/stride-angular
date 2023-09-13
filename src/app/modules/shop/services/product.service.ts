@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
-import { bannerModel } from 'src/app/models/banner.model';
-import { brandModel } from 'src/app/models/brand.model';
-import { productModel } from 'src/app/models/product.model';
+import { bannerModel } from 'src/app/core/models/banner.model';
+import { brandModel } from 'src/app/core/models/brand.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { host } from 'src/environments/environment';
 import { Routes } from 'src/environments/routes';
 

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { addressModel } from 'src/app/models/address.model';
-import { solid } from 'src/app/icons/solid.icons';
+import { addressModel } from 'src/app/core/models/address.model';
+import { solid } from 'src/app/core/icons/solid.icons';
 
 export interface clickEvent {
   action: 'default' | 'delete',

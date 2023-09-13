@@ -2,11 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
-import { productModel } from 'src/app/models/product.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { CommonModule, Location } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShopModule } from '../../shop.module';
-import { solid } from 'src/app/icons/solid.icons';
+import { solid } from 'src/app/core/icons/solid.icons';
 
 
 @Component({

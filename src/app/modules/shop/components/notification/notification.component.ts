@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Renderer2 } from '@angular/core';
-import { TimeAgoPipe } from '../../pipes/time-ago.pipe';
+import { TimeAgoPipe } from '../../../../shared/pipes/time-ago.pipe';
 import { host } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { notificationModel } from 'src/app/models/notification.model';
+import { notificationModel } from 'src/app/core/models/notification.model';
 
 
 @Component({

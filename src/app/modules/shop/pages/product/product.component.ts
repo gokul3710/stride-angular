@@ -1,19 +1,19 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { productModel } from 'src/app/models/product.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { CommonModule, Location } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Observable, Subscription } from 'rxjs';
 import { domain, host } from '../../../../../environments/environment';
 import { CartService } from 'src/app/modules/account/services/cart.service';
-import { solid } from 'src/app/icons/solid.icons';
+import { solid } from 'src/app/core/icons/solid.icons';
 import { FormsModule } from '@angular/forms';
-import { GetMRPPipe } from 'src/app/modules/account/pipes/get-mrp.pipe';
-import { GetTaxPipe } from 'src/app/modules/account/pipes/get-tax.pipe';
-import { AccountModule } from 'src/app/modules/account/account.module';
+import { GetMRPPipe } from 'src/app/shared/pipes/get-mrp.pipe';
+import { GetTaxPipe } from 'src/app/shared/pipes/get-tax.pipe';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ProductPageShimmerComponent } from '../../shimmers/product-page-shimmer/product-page-shimmer.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-product',
@@ -23,7 +23,7 @@ import { ProductPageShimmerComponent } from '../../shimmers/product-page-shimmer
     FontAwesomeModule,
     RouterModule,
     FormsModule,
-    AccountModule,
+    SharedModule,
     ToastrModule,
     ProductPageShimmerComponent
   ],

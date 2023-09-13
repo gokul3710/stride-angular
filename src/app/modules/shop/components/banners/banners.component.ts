@@ -1,6 +1,6 @@
 import { Component , Input } from '@angular/core';
 import { host } from 'src/environments/environment';
-import { bannerModel } from 'src/app/models/banner.model';
+import { bannerModel } from 'src/app/core/models/banner.model';
 import { domain } from '../../../../../environments/environment';
 
 @Component({

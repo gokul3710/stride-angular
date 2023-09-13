@@ -6,10 +6,7 @@ import {   HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { SignupComponent } from './pages/signup/signup.component';
-import { LoginComponent } from './pages/login/login.component';
-import { SigninComponent } from './pages/signin/signin.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import * as environment from '../environments/environment'
@@ -20,32 +17,26 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
-import { GoogleSignupComponent } from './pages/google-signup/google-signup.component';
-import { ScrollResetDirective } from './directives/scroll-reset.directive';
+import { ScrollResetDirective } from './core/directives/scroll-reset.directive';
 import { AccountModule } from './modules/account/account.module';
 import { ShopModule } from './modules/shop/shop.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ImageCacheInterceptor } from './interceptors/image-cache.interceptor';
-import { UserAuthInterceptor } from './interceptors/user-auth.interceptor';
-import { HomeLoaderComponent } from './components/home-loader/home-loader.component';
+import { ImageCacheInterceptor } from './core/interceptors/image-cache.interceptor';
+import { UserAuthInterceptor } from './core/interceptors/user-auth.interceptor';
+import { HomeLoaderComponent } from './shared/components/home-loader/home-loader.component';
+import { AuthModule } from '@angular/fire/auth';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
-    SigninComponent,
-    GoogleSignupComponent,
     ScrollResetDirective,
-    HomeLoaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -55,6 +46,8 @@ import { HomeLoaderComponent } from './components/home-loader/home-loader.compon
     AngularFireDatabaseModule,
     AccountModule,
     ShopModule,
+    AuthModule,
+    SharedModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js')

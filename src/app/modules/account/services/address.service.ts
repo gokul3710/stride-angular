@@ -3,7 +3,7 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { addressModel } from 'src/app/models/address.model';
+import { addressModel } from 'src/app/core/models/address.model';
 import { host } from 'src/environments/environment';
 import { Routes } from 'src/environments/routes';
 

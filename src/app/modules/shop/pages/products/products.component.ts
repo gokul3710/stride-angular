@@ -1,11 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { productModel } from 'src/app/models/product.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
-import { solid } from '../../../../icons/solid.icons';
-import { brandModel } from 'src/app/models/brand.model';
+import { solid } from '../../../../core/icons/solid.icons';
+import { brandModel } from 'src/app/core/models/brand.model';
 
 @Component({
   selector: 'app-products',

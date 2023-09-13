@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
-import { OrdersComponent } from './pages/orders/orders.component';
-import { ProfileComponent } from './pages/profile/profile.component';
-import { AddressesComponent } from './pages/addresses/addresses.component';
-import { AddAddressComponent } from './pages/add-address/add-address.component';
-import { CartComponent } from './pages/cart/cart.component';
-import { EditAddressComponent } from './pages/edit-address/edit-address.component';
-import { ChangePasswordComponent } from './pages/change-password/change-password.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { OrderDetailsComponent } from './pages/order-details/order-details.component';
-import { PaymentsComponent } from './pages/payments/payments.component';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
+import { OrdersComponent } from './orders/orders/orders.component';
+import { ProfileComponent } from './profile/profile/profile.component';
+import { AddressesComponent } from './address/addresses/addresses.component';
+import { AddAddressComponent } from './address/add-address/add-address.component';
+import { CartComponent } from './checkout/cart/cart.component';
+import { EditAddressComponent } from './address/edit-address/edit-address.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
+import { CheckoutComponent } from './checkout/checkout/checkout.component';
+import { OrderDetailsComponent } from './orders/order-details/order-details.component';
+import { PaymentsComponent } from './orders/payments/payments.component';
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },

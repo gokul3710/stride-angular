@@ -2,13 +2,13 @@ import { Component, ElementRef, HostListener, Input, OnInit, Renderer2, ViewChil
 import { Router } from '@angular/router';
 import { host } from 'src/environments/environment';
 import { ProductService } from '../../services/product.service';
-import { userModel } from 'src/app/models/user.model';
+import { userModel } from 'src/app/core/models/user.model';
 import { Observable, Subscription } from 'rxjs';
-import { regular } from 'src/app/icons/regular.icons';
-import { solid } from 'src/app/icons/solid.icons';
+import { regular } from 'src/app/core/icons/regular.icons';
+import { solid } from 'src/app/core/icons/solid.icons';
 import { CartService } from 'src/app/modules/account/services/cart.service';
 import { UserAccountService } from 'src/app/modules/account/services/user-account.service';
-import { notificationModel } from 'src/app/models/notification.model';
+import { notificationModel } from 'src/app/core/models/notification.model';
 
 
 @Component({

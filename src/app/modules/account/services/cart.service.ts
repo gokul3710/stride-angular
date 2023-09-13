@@ -3,10 +3,10 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { cartExtasModel } from 'src/app/models/cartExtras.model';
-import { cartProductModel } from 'src/app/models/cartProduct.model';
-import { couponModel } from 'src/app/models/coupon.model';
-import { productModel } from 'src/app/models/product.model';
+import { cartExtasModel } from 'src/app/core/models/cartExtras.model';
+import { cartProductModel } from 'src/app/core/models/cartProduct.model';
+import { couponModel } from 'src/app/core/models/coupon.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { host } from 'src/environments/environment';
 import { Routes } from 'src/environments/routes';
 

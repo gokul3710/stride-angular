@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { LoggerService } from './services/logger.service';
 import { Location } from '@angular/common';
+import { LoggerService } from './shared/services/logger/logger.service';
 
 @Component({
   selector: 'app-root',

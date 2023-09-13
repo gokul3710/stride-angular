@@ -1,9 +1,9 @@
 import { Component, Input} from '@angular/core';
 import { faCartShopping, faPlus, faShare, faStar, faHeart, faEye, faShareNodes } from '@fortawesome/free-solid-svg-icons';
-import { productModel } from 'src/app/models/product.model';
+import { productModel } from 'src/app/core/models/product.model';
 import { domain, host } from 'src/environments/environment';
 import { CartService } from '../../../account/services/cart.service';
-import { ProductOfferPipe } from '../../pipes/product-offer.pipe';
+import { ProductOfferPipe } from '../../../../shared/pipes/product-offer.pipe';
 
 
 
