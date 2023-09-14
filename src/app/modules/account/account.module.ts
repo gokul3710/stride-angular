@@ -11,7 +11,7 @@ import { AddressesComponent } from './address/addresses/addresses.component';
 import { AddAddressComponent } from './address/add-address/add-address.component';
 import { CartComponent } from './checkout/cart/cart.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { AddressCardComponent } from './components/address-card/address-card.component';
+import { AddressCardComponent } from './shared/address-card/address-card.component';
 import { AddressService } from './services/address.service';
 import { EditAddressComponent } from './address/edit-address/edit-address.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
@@ -19,10 +19,10 @@ import { CheckoutComponent } from './checkout/checkout/checkout.component';
 import { CheckoutService } from './services/checkout.service';
 import { OrderService } from './services/order.service';
 import { OrderDetailsComponent } from './orders/order-details/order-details.component';
-import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PaymentsComponent } from './orders/payments/payments.component';
-import { LoaderComponent } from './components/loader/loader.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
