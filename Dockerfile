@@ -1,27 +1,10 @@
-FROM node:14-slim AS development
+FROM node:20-slim as production
 
 WORKDIR /usr/src/stride
 
 COPY package*.json ./
 
-RUN npm install --force
-
-COPY . .
-
-RUN npm run build
-
-FROM node:14-slim as production
-
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
-
-WORKDIR /usr/src/stride
-
-COPY package*.json ./
-
-RUN npm install --omit=dev --force \
-    && npm cache clean --force \
-    && rm -rf /tmp/* /var/cache/apk/* /root/.npm
+RUN npm install --omit=dev --force
 
 COPY . .
 
