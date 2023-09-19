@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { credentialChecker } from 'src/app/core/validators/credential-check';
 import { UserAccountService } from 'src/app/modules/account/services/user-account.service';
 import { LoggerService } from '../../../../shared/services/logger/logger.service';
-import { AuthService } from '../../services/user/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -54,7 +54,7 @@ export class SigninComponent implements OnInit,OnDestroy {
             this.credentialError = `${response.state} is not registered`
           }else{
             this.authService.state = response.state
-            this.router.navigateByUrl(response.response)
+            this.router.navigateByUrl('/auth/login')
           }
         }
       )

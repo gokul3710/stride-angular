@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="mobile nav-menu-controller" *ngIf="state === 'loggedOut'">
-                    <a [routerLink]="'login'">
+                    <a [routerLink]="'/auth/login'">
                         <h5>Login</h5>
                     </a>
                     <fa-icon [routerLink]="'account'" (click)="navLinksToggler()" [icon]="solid.faArrowRight"></fa-icon>
@@ -68,12 +68,12 @@
                     <fa-icon [icon]="regular.faBell" [ngClass]="{'fa-shake': user.notifications}"></fa-icon>
                     <small *ngIf="user.notifications">{{user.notifications}}</small>
                 </a>
-                <a *ngIf="state === 'loggedOut'" [routerLink]="'login'"><fa-icon [icon]="regular.faUser"></fa-icon></a>
+                <a *ngIf="state === 'loggedOut'" [routerLink]="'/auth/login'"><fa-icon [icon]="regular.faUser"></fa-icon></a>
                 <a *ngIf="state === 'loggedIn'" [routerLink]="'account'"><img [src]="getUserImage()" alt=""></a>
             </div>
 
             <div class="nav-mobile-user-actions mobile">
-                <a *ngIf="state === 'loggedOut'" [routerLink]="'login'"><fa-icon [icon]="regular.faUser"></fa-icon></a>
+                <a *ngIf="state === 'loggedOut'" [routerLink]="'/auth/login'"><fa-icon [icon]="regular.faUser"></fa-icon></a>
                 <a (click)="openNotifications()" *ngIf="state === 'loggedIn'">
                     <fa-icon [icon]="regular.faBell" [ngClass]="{'fa-shake': user.notifications}"></fa-icon>
                     <small *ngIf="user.notifications">{{user.notifications}}</small>

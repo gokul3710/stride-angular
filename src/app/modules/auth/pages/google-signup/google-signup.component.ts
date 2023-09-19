@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 import { passwordChecker } from 'src/app/core/validators/password-checker';
 import { UserAccountService } from 'src/app/modules/account/services/user-account.service';
 import { LoggerService } from '../../../../shared/services/logger/logger.service';
-import { AuthService } from '../../services/user/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-google-signup',
