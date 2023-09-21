@@ -9,7 +9,7 @@
     <div class="orders-container">
         <ng-container *ngFor="let order of orders$ | async">
             <ng-container *ngFor="let item of order.items">
-                <a style="color: #141414;" [routerLink]="'../order/' + order._id">
+                <a style="color: #141414;" [routerLink]="'../orders/' + order._id">
                     <div class="order" [ngClass]="{'delivered': order.status === 'delivered','cancelled': order.status === 'cancelled'}">
                         <div class="order-image">
                             <img [src]="item.images[0]" alt="">
@@ -29,7 +29,7 @@
                             <div class="options">
                                 <h5 *ngIf="order.status === 'delivered'"><span>Write a </span>Review</h5>
                                 <h5><span>Order </span>Tracking</h5>
-                                <a style="color: #1414149d;" routerLink="/account/payments">
+                                <a style="color: #1414149d;" routerLink="/account/orders/payments">
                                     <h5><span>See </span>Payment</h5>
                                 </a>
                             </div>

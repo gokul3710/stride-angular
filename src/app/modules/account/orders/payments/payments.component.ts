@@ -22,14 +22,19 @@ export class PaymentsComponent implements OnInit,OnDestroy {
   //subscriptions
   private getPaymentsSubscription!: Subscription
 
-  constructor(private location : Location, private orderService: OrderService){}
+  constructor(private orderService: OrderService){}
   
   ngOnInit(): void {
       this.getPaymentsSubscription = this.orderService.getPayments().subscribe(
       (response)=>{
+        console.log(response)
         this.payments = response
+      },
+      (err)=>{
+        console.log(err)
       }
     )
+    console.log(this.payments)
   }
 
   ngOnDestroy(){

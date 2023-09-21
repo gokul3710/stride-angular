@@ -179,7 +179,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
       
       this.checkoutService.placeOrder(order).subscribe(
         (response) => {
-          this.router.navigateByUrl(`/account/order/${response}`)
+          this.router.navigateByUrl(`/account/orders/${response}`)
         }
       )
       return true
@@ -209,7 +209,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
 
           this.checkoutService.placeOrder(order).subscribe(
             (response) => {
-              this.router.navigateByUrl(`/account/order/${response}`)
+              this.router.navigateByUrl(`/account/orders/${response}`)
             }
           )
         

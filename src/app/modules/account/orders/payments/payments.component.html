@@ -8,7 +8,7 @@
     </div>
     <div class="payments-container">
         <ng-container *ngFor="let payment of payments">
-            <a style="color: #141414;" [routerLink]="'../order/' + payment.order._id">
+            <a style="color: #141414;" [routerLink]="'../orders/' + payment.order._id">
                 <div class="payment">
                     <div class="payment-icon" [ngClass]="{refunded: payment.status === 'refunded'}">
                         <fa-icon [icon]="solid.faIndianRupeeSign"></fa-icon>
