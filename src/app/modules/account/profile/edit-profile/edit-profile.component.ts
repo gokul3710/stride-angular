@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserAccountService } from '../../services/user-account.service';
+import { UserAccountService } from '../../services/profile/user-account.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { host } from 'src/environments/environment'
 import { userModel } from 'src/app/core/models/user.model';

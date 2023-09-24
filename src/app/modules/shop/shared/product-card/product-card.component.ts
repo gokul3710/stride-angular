@@ -2,7 +2,7 @@ import { Component, Input} from '@angular/core';
 import { faCartShopping, faPlus, faShare, faStar, faHeart, faEye, faShareNodes } from '@fortawesome/free-solid-svg-icons';
 import { productModel } from 'src/app/core/models/product.model';
 import { domain, host } from 'src/environments/environment';
-import { CartService } from '../../../account/services/cart.service';
+import { CartService } from '../../../account/services/checkout/cart.service';
 import { ProductOfferPipe } from '../../../../shared/pipes/product-offer.pipe';
 
 
@@ -38,7 +38,7 @@ export class ProductCardComponent {
   share() {
     if (navigator.share) {
       navigator.share({
-        title: this.product.brand + " " + this.product.model,
+        title: this.product.brand.name+ " " + this.product.model,
         text: this.product.description,
         url: this.domain+'/product/'+this.product._id,
       })

@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserAccountService } from '../../services/user-account.service';
-import { AddressService } from '../../services/address.service';
+import { UserAccountService } from '../../services/profile/user-account.service';
+import { AddressService } from '../../services/address/address.service';
 import { addressModel } from 'src/app/core/models/address.model';
 import { Subscription } from 'rxjs';
 import { solid } from 'src/app/core/icons/solid.icons';

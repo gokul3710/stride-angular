@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAccountService } from '../../services/user-account.service';
+import { UserAccountService } from '../../services/profile/user-account.service';
 import { Observable } from 'rxjs';
-import { AddressService } from '../../services/address.service';
+import { AddressService } from '../../services/address/address.service';
 import { addressModel } from 'src/app/core/models/address.model';
 import { solid } from 'src/app/core/icons/solid.icons';
 

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { OrdersRoutingModule } from './orders-routing.module';
 import { OrdersComponent } from './orders/orders.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,7 +16,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    OrdersRoutingModule,
+    RouterModule.forChild([
+      { path: '', component: OrdersComponent},
+      { path: 'payments', component: PaymentsComponent },
+      { path: ':id', component: OrderDetailsComponent },
+    ]),
     SharedModule
   ]
 })

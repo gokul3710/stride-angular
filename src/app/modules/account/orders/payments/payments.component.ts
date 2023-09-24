@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { regular } from '../../../../core/icons/regular.icons';
 import { solid } from '../../../../core/icons/solid.icons';
 import { Location } from '@angular/common';
-import { OrderService } from '../../services/order.service';
+import { OrderService } from '../../services/orders/order.service';
 import { Subscription } from 'rxjs';
 
 @Component({

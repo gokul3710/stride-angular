@@ -7,7 +7,7 @@ import { notificationModel } from 'src/app/core/models/notification.model';
 import { userModel } from 'src/app/core/models/user.model';
 import { host } from 'src/environments/environment';
 import { Routes } from 'src/environments/routes';
-import { LoggerService } from '../../../shared/services/logger/logger.service';
+import { LoggerService } from '../../../../shared/services/logger/logger.service';
 
 @Injectable({
   providedIn: 'root'

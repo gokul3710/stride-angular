@@ -8,11 +8,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartComponent } from './checkout/cart/cart.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { AddressService } from './services/address.service';
+import { AddressService } from './services/address/address.service';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { CheckoutComponent } from './checkout/checkout/checkout.component';
-import { CheckoutService } from './services/checkout.service';
-import { OrderService } from './services/order.service';
+import { CheckoutService } from './services/checkout/checkout.service';
+import { OrderService } from './services/orders/order.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SharedModule } from 'src/app/shared/shared.module';
 

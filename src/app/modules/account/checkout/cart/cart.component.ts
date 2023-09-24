@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Location } from '@angular/common';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/checkout/cart.service';
 import { Observable, Subscription } from 'rxjs';
 import { GetMRPPipe } from '../../../../shared/pipes/get-mrp.pipe';
 import { GetTaxPipe } from '../../../../shared/pipes/get-tax.pipe';

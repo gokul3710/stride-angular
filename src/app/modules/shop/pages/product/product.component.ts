@@ -6,7 +6,7 @@ import { CommonModule, Location } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Observable, Subscription } from 'rxjs';
 import { domain, host } from '../../../../../environments/environment';
-import { CartService } from 'src/app/modules/account/services/cart.service';
+import { CartService } from 'src/app/modules/account/services/checkout/cart.service';
 import { solid } from 'src/app/core/icons/solid.icons';
 import { FormsModule } from '@angular/forms';
 import { GetMRPPipe } from 'src/app/shared/pipes/get-mrp.pipe';
@@ -114,7 +114,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   share(product: productModel) {
     if (navigator.share) {
       navigator.share({
-        title: product.brand + " " + product.model,
+        title: product.brand.name+ " " + product.model,
         text: product.description,
         url: this.domain + '/product/' + product._id,
       })

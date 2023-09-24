@@ -113,7 +113,7 @@ export class AddressService implements OnDestroy {
   }
 
   editAddress(addressData: addressModel) {
-    this.editAddressSubscription = this.http.post(`${host}${Routes.EDIT_ADDRESS}`, addressData).subscribe({
+    this.editAddressSubscription = this.http.patch(`${host}${Routes.EDIT_ADDRESS}`, addressData).subscribe({
       next: (response) => {
         let addresses = this.addresses$.getValue()
         addresses = addresses.map((address) => {

@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.topBrandProducts$ = this.productService.products.pipe(
       map((products) => {
         return products.filter((product: productModel) => {
-          return product.brand === "nike" || product.brand === "adidas" || product.brand === "puma"
+          return product.brand.name=== "nike" || product.brand.name=== "adidas" || product.brand.name=== "puma"
         })
       })
     )

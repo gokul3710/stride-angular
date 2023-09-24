@@ -6,8 +6,8 @@ import { userModel } from 'src/app/core/models/user.model';
 import { Observable, Subscription } from 'rxjs';
 import { regular } from 'src/app/core/icons/regular.icons';
 import { solid } from 'src/app/core/icons/solid.icons';
-import { CartService } from 'src/app/modules/account/services/cart.service';
-import { UserAccountService } from 'src/app/modules/account/services/user-account.service';
+import { CartService } from 'src/app/modules/account/services/checkout/cart.service';
+import { UserAccountService } from 'src/app/modules/account/services/profile/user-account.service';
 import { notificationModel } from 'src/app/core/models/notification.model';
 
 

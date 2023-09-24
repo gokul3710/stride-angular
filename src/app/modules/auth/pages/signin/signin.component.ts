@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { credentialChecker } from 'src/app/core/validators/credential-check';
-import { UserAccountService } from 'src/app/modules/account/services/user-account.service';
+import { UserAccountService } from 'src/app/modules/account/services/profile/user-account.service';
 import { LoggerService } from '../../../../shared/services/logger/logger.service';
 import { AuthService } from '../../services/auth.service';
 

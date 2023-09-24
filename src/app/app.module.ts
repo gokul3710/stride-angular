@@ -49,7 +49,10 @@ import { SharedModule } from './shared/shared.module';
     AuthModule,
     SharedModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 1000,
+      positionClass: 'toast-bottom-right',
+    }),
     ServiceWorkerModule.register('ngsw-worker.js')
   ],
   providers: [

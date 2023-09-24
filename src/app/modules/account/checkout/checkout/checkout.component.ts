@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CheckoutService } from '../../services/checkout.service';
+import { CheckoutService } from '../../services/checkout/checkout.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { addressModel } from 'src/app/core/models/address.model';
@@ -8,9 +8,9 @@ import { Subscription } from 'rxjs';
 import { GetTaxPipe } from '../../../../shared/pipes/get-tax.pipe';
 import { GetMRPPipe } from '../../../../shared/pipes/get-mrp.pipe';
 import { host, razorpay} from '../../../../../environments/environment';
-import { AddressService } from '../../services/address.service';
+import { AddressService } from '../../services/address/address.service';
 import { solid } from 'src/app/core/icons/solid.icons';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../services/checkout/cart.service';
 import { ToastrService } from 'ngx-toastr';
 
 declare const Razorpay: any
@@ -59,7 +59,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
 
     this.cartItemsSubscription = this.cartService.cartProducts.subscribe(
       (cartItems)=>{
-
+        console.log(cartItems)
         if(!cartItems.length){
           this.toastr.error('Cart is Empty')
           this.router.navigateByUrl('/account/cart')

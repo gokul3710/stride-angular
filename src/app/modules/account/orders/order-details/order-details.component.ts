@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { OrderService } from '../../services/order.service';
+import { OrderService } from '../../services/orders/order.service';
 import { Observable, Subscription } from 'rxjs';
 import { GetMRPPipe } from '../../../../shared/pipes/get-mrp.pipe';
 import { GetTaxPipe } from '../../../../shared/pipes/get-tax.pipe';

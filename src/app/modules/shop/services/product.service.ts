@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { bannerModel } from 'src/app/core/models/banner.model';
 import { brandModel } from 'src/app/core/models/brand.model';
+import { couponModel } from 'src/app/core/models/coupon.model';
 import { productModel } from 'src/app/core/models/product.model';
 import { host } from 'src/environments/environment';
 import { Routes } from 'src/environments/routes';
@@ -22,6 +23,8 @@ export class ProductService {
   private brands$: BehaviorSubject<brandModel[]> = new BehaviorSubject([])
 
   private banners$ : BehaviorSubject<bannerModel[]> = new BehaviorSubject([])
+
+  private coupons$ : BehaviorSubject<couponModel[]> = new BehaviorSubject([])
 
   constructor(private http: HttpClient) {
     this.fetchProducts()
@@ -85,6 +88,19 @@ export class ProductService {
     });
   }
 
+  fetchCoupons(){
+    return this.http.get<couponModel[]>(`${host}${Routes.GET_COUPON}`).subscribe({
+      next: (coupons) => {
+        coupons.sort((a,b) => b.amount - a.amount)
+        console.log(coupons);
+        this.coupons$.next(coupons)
+      },
+      error: (err: HttpErrorResponse) => {
+          console.log(err.error);
+      }
+    });
+  }
+
   get products(): Observable<productModel[]>{
     return this.products$
   }
@@ -96,6 +112,10 @@ export class ProductService {
   get brands(): Observable<brandModel[]>{
     return this.brands$
   }
+  
+  get coupons(): Observable<couponModel[]>{
+    return this.coupons$
+  }
 
   getProductById(productId: string): Observable<productModel> {
     return this.products$.pipe(
@@ -105,7 +125,7 @@ export class ProductService {
 
   getProductsByBrand(brand: string): Observable<productModel[]> {
     return this.products$.pipe(
-      map((products) => products.filter((product) => product.brand === brand))
+      map((products) => products.filter((product) => product.brand.name === brand))
     );
   }
 

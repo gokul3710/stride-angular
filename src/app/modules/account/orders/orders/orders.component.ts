@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { OrderService } from '../../services/order.service';
+import { OrderService } from '../../services/orders/order.service';
 import { Observable } from 'rxjs';
 import { host } from 'src/environments/environment';
 import { orderModel } from 'src/app/core/models/order.model';

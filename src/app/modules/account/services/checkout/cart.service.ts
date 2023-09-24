@@ -45,11 +45,14 @@ export class CartService implements OnDestroy {
     if (localStorage.getItem('token')) {
       this.http.get<cartProductModel[]>(`${host}${Routes.GET_CART_PRODUCTS}`).subscribe({
         next: (response) => {
+          console.log(response)
           this.cartProducts$.next(response);
           this.getCartTotal(0)
         },
         error: (err) => {
-          this.toastr.error(err.error.message)
+          if(err.error.message != 'Cart Is Empty'){
+            this.toastr.error(err.error.message)
+          }
           console.log('Error fetching cartProducts:', err);
         }
       });
@@ -61,7 +64,6 @@ export class CartService implements OnDestroy {
       this.http.get<cartExtasModel>(`${host}${Routes.GET_CART_TOTAL}`).subscribe({
         next: (response) => {
           this.cartExtras$.next(response);
-
           this.cartCount$.next(response.items)
         },
         error: (err: HttpErrorResponse) => {
@@ -70,7 +72,9 @@ export class CartService implements OnDestroy {
             this.toastr.error("Login To Continue")
             localStorage.removeItem('token')
           } else {
-            this.toastr.error(err.error.message)
+            if(err.error.message != 'Cart Is Empty'){
+              this.toastr.error(err.error.message)
+            }
             console.log('Error fetching cartExtras:', err.error.message);
           }
         }
@@ -98,7 +102,7 @@ export class CartService implements OnDestroy {
         cartProducts = cartProducts.filter(cartProduct => cartProduct.item !== productId)
         this.cartProducts$.next(cartProducts)
         this.getCartTotal(-deleteProduct.quantity)
-        this.toastr.error('Product Removed From Cart')
+        this.toastr.warning('Product Removed From Cart')
         return true
       },
       error: (err) => {
@@ -125,6 +129,7 @@ export class CartService implements OnDestroy {
         })
         this.cartProducts$.next(cartProducts)
         this.getCartTotal(count)
+        this.toastr.success('Product Quantity Updated')
         return true
       },
       error: (err) => {
@@ -151,6 +156,7 @@ export class CartService implements OnDestroy {
               cartProduct.quantity += count,
                 cartProduct.total += count * product.price
             }
+            this.toastr.success('Product Quantity Updated')
             return cartProduct
           })
         } else {
@@ -165,7 +171,8 @@ export class CartService implements OnDestroy {
         }
         this.cartProducts$.next(cartProducts)
         this.getCartTotal(count)
-        this.toastr.success("Item Added To Cart")
+        this.toastr.success("Product Added To Cart")
+        return true
       },
       error: (err) => {
         if (err.error.message === "Invalid token") {
@@ -200,7 +207,6 @@ export class CartService implements OnDestroy {
       return null;
     } catch (err: any) {
       console.log(err);
-      
       if (err.error.message === "Invalid Token") {
         this.toastr.error("Login To Continue")
         localStorage.removeItem('token')
@@ -219,7 +225,7 @@ export class CartService implements OnDestroy {
       cartExtras.discount = 0
       this.cartExtras$.next(cartExtras)
       this.getCartTotal(0)
-      this.toastr.error("Coupon Removed")
+      this.toastr.warning("Coupon Removed")
       return null;
     } catch (err: any) {
       if (err.error.message === "Invalid Token") {
@@ -269,8 +275,6 @@ export class CartService implements OnDestroy {
   //   this.getCartTotal(0)
   //   this.toastr.error("Coupon Removed")
   // }
-
-
 
   handleDirectBuy(item: cartProductModel, count: number, extras: cartExtasModel) {
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AddressService } from '../../services/address.service';
+import { AddressService } from '../../services/address/address.service';
 import { solid } from 'src/app/core/icons/solid.icons';
 
 @Component({

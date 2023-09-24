@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserAccountService } from '../../services/user-account.service';
+import { UserAccountService } from '../../services/profile/user-account.service';
 import { host } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { OrderService } from '../../services/order.service';
+import { OrderService } from '../../services/orders/order.service';
 import { userModel } from 'src/app/core/models/user.model';
 import { orderModel } from 'src/app/core/models/order.model';
 import { solid } from 'src/app/core/icons/solid.icons';

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserAccountService } from '../../services/user-account.service';
+import { UserAccountService } from '../../services/profile/user-account.service';
 import { passwordChecker } from 'src/app/core/validators/password-checker';
 import { Subscription } from 'rxjs';
 import { solid } from 'src/app/core/icons/solid.icons';

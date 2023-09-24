@@ -4,6 +4,6 @@ export interface cartProductModel {
     _id: string,
     item: string,
     quantity: number,
-    product: productModel,
+    product: productModel
     total: number
 }

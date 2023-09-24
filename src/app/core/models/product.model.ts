@@ -2,7 +2,7 @@ import { brandModel } from "./brand.model";
 
 export interface productModel{
     _id?: string,
-    brand: string,
+    brand: brandModel,
     model: string,
     description: string
     color: string,

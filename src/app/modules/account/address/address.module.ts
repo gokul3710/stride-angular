@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AddressRoutingModule } from './address-routing.module';
 import { AddressesComponent } from './addresses/addresses.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { AddAddressComponent } from './add-address/add-address.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,7 +17,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    AddressRoutingModule,
+    RouterModule.forChild([
+      { path: '', component: AddressesComponent },
+      { path: 'add', component: AddAddressComponent },
+      { path: 'edit/:id', component: EditAddressComponent }
+    ]),
     SharedModule,
     FormsModule,
     ReactiveFormsModule

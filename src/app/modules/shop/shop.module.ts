@@ -13,16 +13,13 @@ import { BrandsComponent } from './shared/brands/brands.component';
 import { BrandSingleComponent } from './shared/brand-single/brand-single.component';
 import { ProductCardComponent } from './shared/product-card/product-card.component';
 import { ProductsListComponent } from './shared/products-list/products-list.component';
-import { TrendingProductsComponent } from './shared/trending-products/trending-products.component';
-import { ButtonPrimaryComponent } from './shared/button-primary/button-primary.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { TimeAgoPipe } from '../../shared/pipes/time-ago.pipe';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { BannersComponent } from './shared/banners/banners.component';
-import { LoaderComponent } from './shared/loader/loader.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ProductOfferPipe } from '../../shared/pipes/product-offer.pipe';
-import { ProductShimmerComponent } from './shimmers/shimmer-components/product-shimmer/product-shimmer.component';
+import { ProductShimmerComponent } from './shimmers/product-shimmer/product-shimmer.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -36,13 +33,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
     BrandSingleComponent,
     ProductCardComponent,
     ProductsListComponent,
-    TrendingProductsComponent,
-    ButtonPrimaryComponent,
     ProductsComponent,
     TimeAgoPipe,
     NotificationComponent,
     BannersComponent,
-    LoaderComponent,
     SearchComponent,
     ProductShimmerComponent,
     ProductOfferPipe,
