@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider } from '@angular/fire/auth';
+import { GoogleAuthProvider, User } from '@angular/fire/auth';
 import { userModel } from 'src/app/core/models/user.model';
 import { Routes } from 'src/environments/routes';
 import { host } from 'src/environments/environment';
@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   async loginByGoogle() {
-    let response = await this.fireAuth.signInWithPopup(new GoogleAuthProvider())
+    let response: {user: User} = await this.fireAuth.signInWithPopup(new GoogleAuthProvider())
     return this.http.post<{token: string, state: 'login' | 'signup'}>(`${host}${Routes.USER_SIGNIN_GOOGLE}`, response.user)
   }
 
